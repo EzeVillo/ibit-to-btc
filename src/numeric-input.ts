@@ -60,11 +60,15 @@ interface NumericInputOptions {
 export function bindNumericInput(input: HTMLInputElement, options: NumericInputOptions) {
   let previous = { value: input.value, start: input.selectionStart, end: input.selectionEnd };
   let composing = false;
+  let pendingText: string | null = null;
 
   function sync() {
     const rules = options.rules();
-    input.inputMode = rules.separator ? 'decimal' : 'numeric';
-    input.lang = rules.separator === '.' ? 'en-US' : rules.separator === ',' ? 'es-AR' : localeFor(rules.market ?? 'ar');
+    const inputMode = rules.separator ? 'decimal' : 'numeric';
+    const lang = rules.separator === '.' ? 'en-US' : rules.separator === ',' ? 'es-AR' : localeFor(rules.market ?? 'ar');
+    // Leave the active keyboard alone unless this field's format actually changes.
+    if (input.inputMode !== inputMode) input.inputMode = inputMode;
+    if (input.lang !== lang) input.lang = lang;
     if (!composing && !numericInputError(input.value, rules, true)) {
       previous = { value: input.value, start: input.selectionStart, end: input.selectionEnd };
     }
@@ -85,13 +89,14 @@ export function bindNumericInput(input: HTMLInputElement, options: NumericInputO
   }
 
   function accept() {
+    pendingText = null;
     options.onAccept();
     sync();
   }
 
-  function checkCurrent(inputType = '') {
+  function checkCurrent(inputType = '', data: string | null = null) {
     let value = input.value;
-    if (inputType === 'insertText') {
+    if (inputType === 'insertText' && (data == null || /^[.,]$/.test(data))) {
       let start = 0;
       while (start < previous.value.length && start < value.length && previous.value[start] === value[start]) start++;
       let end = value.length;
@@ -118,15 +123,18 @@ export function bindNumericInput(input: HTMLInputElement, options: NumericInputO
   input.addEventListener('beforeinput', event => {
     const change = event as InputEvent;
     if (composing || change.isComposing) return;
+    pendingText = null;
     sync();
     if (!change.inputType.startsWith('insert')) return;
     const raw = change.data ?? change.dataTransfer?.getData('text/plain');
+    // Preserve known text when the subsequent input event omits its data.
+    pendingText = raw ?? null;
     // Some keyboards, autofill and history operations only expose the final value in input.
     if (raw == null || !change.cancelable) return;
     const text = keyboardText(raw, change.inputType);
     const next = proposed(text);
     const error = numericInputError(next.value, options.rules(), true);
-    if (error) { change.preventDefault(); options.onReject(error); }
+    if (error) { change.preventDefault(); pendingText = null; options.onReject(error); }
     else if (next.replaceZero || text !== raw) {
       change.preventDefault();
       input.value = next.value;
@@ -160,9 +168,11 @@ export function bindNumericInput(input: HTMLInputElement, options: NumericInputO
 
   input.addEventListener('input', event => {
     const change = event as InputEvent;
-    if (!composing && !change.isComposing) checkCurrent(change.inputType);
+    const data = change.data ?? pendingText;
+    pendingText = null;
+    if (!composing && !change.isComposing) checkCurrent(change.inputType, data);
   });
-  input.addEventListener('compositionstart', () => { sync(); composing = true; });
+  input.addEventListener('compositionstart', () => { pendingText = null; sync(); composing = true; });
   input.addEventListener('compositionend', () => { composing = false; checkCurrent(); });
   input.addEventListener('select', () => { if (!composing && input.value === previous.value) sync(); });
   sync();

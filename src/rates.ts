@@ -81,6 +81,7 @@ function validTimestamp(value: unknown): value is string {
 
 export function validateRates(value: unknown): Rates {
   if (!value || typeof value !== 'object') throw new Error('Datos de equivalencia inválidos.');
+  if ('market' in value && value.market !== 'ar') throw new Error('Datos de mercado argentino inválidos.');
   const data = value as Partial<Rates>;
   if (typeof data.asOf !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(data.asOf)
     || !Number.isFinite(Date.parse(`${data.asOf}T00:00:00Z`))

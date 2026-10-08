@@ -184,7 +184,7 @@ function render(): void {
     document.querySelector<HTMLInputElement>(`input[name="source"][value="${asset}"]`)!.disabled = unavailable;
     sourceSelect.querySelector<HTMLOptionElement>(`option[value="${asset}"]`)!.disabled = unavailable;
   }
-  averageCost.update(rates); amountGuard.sync(); clearTimeout(announcementTimer);
+  amountGuard.sync(); clearTimeout(announcementTimer);
   if (amounts) announcementTimer = setTimeout(() => {
     text('#announcement', assets.filter(asset => asset !== source).map(asset => amounts?.[asset] ? `${format(amounts[asset]!, asset).text} ${info[asset].label}` : t('notAvailable', { asset: info[asset].label })).join(', ') + (roundingNoticeEl.hidden ? '' : `. ${roundingNoticeEl.textContent}`));
   }, 450);
@@ -219,14 +219,21 @@ sourceSelect.addEventListener('change', () => changeSource(sourceSelect.value as
 mobileLayout.addEventListener('change', placeSourceExplanation);
 document.querySelectorAll<HTMLInputElement>('input[name="source"]').forEach(input => { input.addEventListener('change', () => changeSource(input.value as Asset)); });
 resultsEl.addEventListener('click', event => { const button = (event.target as HTMLElement).closest<HTMLButtonElement>('button[data-source]'); if (button && !button.disabled) changeSource(button.dataset.source as Asset, true); });
-document.querySelector<HTMLButtonElement>('#clear')!.addEventListener('click', () => { amountInput.value = ''; exactAmount = null; validationError = ''; sourceChangeAdjustment = null; formatFeedback.hide(); averageCost.clear(); render(); amountInput.focus(); });
-document.querySelector<HTMLSelectElement>('#version-select')!.addEventListener('change', event => { const version = (event.target as HTMLSelectElement).value; location.assign(appPath(basePath, version === 'ar' ? 'ar/' : '')); });
+document.querySelector<HTMLButtonElement>('#clear')!.addEventListener('click', () => { amountInput.value = ''; exactAmount = null; validationError = ''; sourceChangeAdjustment = null; formatFeedback.hide(); render(); amountInput.focus(); });
+document.querySelector<HTMLSelectElement>('#version-select')!.addEventListener('change', event => {
+  const select = event.target as HTMLSelectElement;
+  const version = select.value;
+  // A history return can restore this document, including the select's current value.
+  select.value = market;
+  location.assign(appPath(basePath, version === 'ar' ? 'ar/' : ''));
+});
 
 async function loadRates(): Promise<void> {
   if (loading) return;
   loading = true; refreshButton.disabled = true; statusEl.textContent = t('loading'); statusEl.classList.add('loading'); render();
   try {
     rates = await requestRates(market);
+    averageCost.update(rates);
     loadError = null;
     lastRefresh = Date.now();
     if (isGlobalRates(rates)) {

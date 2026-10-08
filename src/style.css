@@ -65,6 +65,8 @@ h1 { font-size: clamp(1.5625rem, 3vw, 2.25rem); line-height: 1.35; font-weight: 
 .input-format-feedback { color: var(--error); font-size: 0.875rem; line-height: 1.7; margin: 10px 0 0; }
 .input-error { color: var(--error); font-size: 0.875rem; line-height: 1.7; margin: 10px 0 0; }
 .average-cost { margin-top: 24px; padding: 26px 28px 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.average-cost-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.average-cost-title-row .text-button { flex-shrink: 0; }
 .average-cost-heading h2 { margin: 0; font-size: 1.125rem; font-weight: 570; line-height: 1.6; letter-spacing: -.4px; }
 .average-cost-heading p { margin: 6px 0 12px; color: var(--muted); font-size: 0.875rem; line-height: 1.8; }
 .average-cost-workspace { display: grid; grid-template-columns: .92fr 1.25fr; gap: 28px; margin-top: 18px; }

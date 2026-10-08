@@ -66,6 +66,14 @@ describe('loading rates in the browser', () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: () => Promise.reject(new DOMException('Expired', 'TimeoutError')) }));
     await expect(requestRates('ar')).rejects.toMatchObject({ kind: 'timeout' });
   });
+  it.each([['ar', global], ['global', ar]] as const)('rejects a response from the other market when requesting %s', async (market, data) => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(Response.json(data)));
+    await expect(requestRates(market)).rejects.toMatchObject({ kind: 'invalid' });
+  });
+  it('rejects an international discriminator mixed into an otherwise Argentine response', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(Response.json({ ...ar, market: 'global' })));
+    await expect(requestRates('ar')).rejects.toMatchObject({ kind: 'invalid' });
+  });
   it('reports a connection lost while reading the body', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: () => Promise.reject(new TypeError('Connection lost')) }));
     await expect(requestRates('ar')).rejects.toMatchObject({ kind: 'network' });

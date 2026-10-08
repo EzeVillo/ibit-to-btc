@@ -11,7 +11,7 @@ export function averageCostMarkup(market: Market): string {
   const t = translator(market);
   const unit = market === 'ar' ? 'CEDEAR' : t('ibitUnit');
   return `<section class="average-cost" aria-labelledby="average-cost-title">
-    <div class="average-cost-heading"><h2 id="average-cost-title">${t('costTitle')}</h2><p>${t('costIntro')}</p></div>
+    <div class="average-cost-heading"><div class="average-cost-title-row"><h2 id="average-cost-title">${t('costTitle')}</h2><button id="cost-clear" class="text-button" type="button">${t('clear')}</button></div><p>${t('costIntro')}</p></div>
     <div id="average-cost-workspace" class="average-cost-workspace">
       <div id="average-cost-fields" class="average-cost-input">
         ${market === 'ar' ? `<div class="cost-field"><label for="cost-currency">${t('costCurrency')}</label><select id="cost-currency"><option value="ars">ARS</option><option value="usd" selected>${t('mepCurrency')}</option><option value="usd_ccl">${t('cclCurrency')}</option></select></div>` : ''}
@@ -40,12 +40,14 @@ export function createAverageCostUI(root: HTMLElement, market: Market = 'ar') {
   let announcementTimer: ReturnType<typeof setTimeout> | undefined;
   const text = (selector: string, value: string) => { root.querySelector<HTMLElement>(selector)!.textContent = value; };
 
-  function render() {
+  function render(restoreInput = false) {
     const label = currencyLabels[model.currency];
     const resultLabel = model.currency === 'ars' ? 'ARS' : 'USD';
     const view = model.view(rates);
     if (currency) currency.value = model.currency;
-    if (price.value !== view.input) price.value = view.input;
+    // Rates updates must not overwrite text still being composed by the keyboard.
+    // Only this section's currency selector and clear action replace its draft.
+    if (restoreInput && price.value !== view.input) price.value = view.input;
     priceGuard.sync();
     const example = market === 'global' ? '43.68' : model.currency === 'ars' ? '6552' : '4,37';
     price.placeholder = t('costExample', { value: example });
@@ -67,10 +69,13 @@ export function createAverageCostUI(root: HTMLElement, market: Market = 'ar') {
     else text('#cost-announcement', '');
   }
 
-  if (currency) currency.addEventListener('change', () => { model.currency = currency.value as CurrencyAsset; feedback.hide(); render(); });
+  function clear() { model.clear(); feedback.hide(); render(true); }
+  if (currency) currency.addEventListener('change', () => { model.currency = currency.value as CurrencyAsset; feedback.hide(); render(true); });
   const priceGuard = bindNumericInput(price, { rules: () => getCostInputRules(market), onAccept: () => { model.setPrice(price.value); feedback.hide(); render(); }, onReject: feedback.show });
+  root.querySelector<HTMLButtonElement>('#cost-clear')!.addEventListener('click', () => { clear(); price.focus(); });
+  render();
   return {
     update(newRates: AnyRates | null) { rates = newRates; render(); },
-    clear() { model.clear(); feedback.hide(); render(); },
+    clear,
   };
 }

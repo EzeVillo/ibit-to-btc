@@ -30,6 +30,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261008.1",
     "@types/node": "^24.19.1",
+    "jsdom": "^29.1.1",
     "miniflare": "^5.20261006.0-alpha",
     "typescript": "7.0.2",
     "vite": "8.3.3",

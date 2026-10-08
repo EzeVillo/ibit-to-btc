@@ -42,14 +42,14 @@ function setup(value = '', rules: () => NumericInputRules = () => getAmountInput
   const onAccept = vi.fn();
   const onReject = vi.fn();
   const guard = bindNumericInput(input as unknown as HTMLInputElement, { rules, onAccept, onReject, replaceInitialZero });
-  function insert(text: string, cancelable = true) {
+  function insert(text: string, cancelable = true, inputData: string | null = text) {
     const event = Object.assign(new Event('beforeinput', { cancelable }), { inputType: 'insertText', data: text });
     input.dispatchEvent(event);
     if (!event.defaultPrevented) {
       const start = input.selectionStart;
       input.value = input.value.slice(0, start) + text + input.value.slice(input.selectionEnd);
       input.setSelectionRange(start + text.length, start + text.length);
-      input.dispatchEvent(Object.assign(new Event('input'), { inputType: 'insertText', data: text }));
+      input.dispatchEvent(Object.assign(new Event('input'), { inputType: 'insertText', data: inputData }));
     }
     return event;
   }
@@ -256,6 +256,34 @@ describe('teclado decimal según campo y versión', () => {
     input.dispatchEvent(Object.assign(new Event('input'), { inputType, data: ',' }));
     expect(input.value).toBe('0');
     expect(onReject).toHaveBeenCalledWith(expect.stringContaining('Usá punto decimal'));
+  });
+
+  it.each(['ar', 'global'] as const)('%s: no confunde un reemplazo completo con una tecla decimal si beforeinput no es cancelable', market => {
+    const rules = getCostInputRules(market);
+    const { input, insert, onReject } = setup('1234', () => rules);
+    input.setSelectionRange(0, 4);
+    insert(market === 'ar' ? '12.34' : '12,34', false);
+    expect(input.value).toBe('1234');
+    expect(onReject).toHaveBeenCalledWith(rules.separatorMessage);
+  });
+
+  it.each(['ar', 'global'] as const)('%s: respeta el texto completo informado por input aunque su diferencia sea un solo separador', market => {
+    const rules = getCostInputRules(market);
+    const { input, onReject } = setup('1234', () => rules);
+    const value = market === 'ar' ? '12.34' : '12,34';
+    input.value = value;
+    input.dispatchEvent(Object.assign(new Event('input'), { inputType: 'insertText', data: value }));
+    expect(input.value).toBe('1234');
+    expect(onReject).toHaveBeenCalledWith(rules.separatorMessage);
+  });
+
+  it.each(['ar', 'global'] as const)('%s: conserva el texto de beforeinput no cancelable cuando input omite data', market => {
+    const rules = getCostInputRules(market);
+    const { input, insert, onReject } = setup('1234', () => rules);
+    input.setSelectionRange(0, 4);
+    insert(market === 'ar' ? '12.34' : '12,34', false, null);
+    expect(input.value).toBe('1234');
+    expect(onReject).toHaveBeenCalledWith(rules.separatorMessage);
   });
 
   it('no adapta una tecla decimal pegada', () => {

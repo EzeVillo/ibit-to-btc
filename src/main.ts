@@ -122,7 +122,6 @@ function render(): void {
   text('#equivalences-heading', t(isCurrencyAsset(source) ? 'moneyEquivalences' : 'equivalences'));
   text('#amount-label', info[source].inputLabel); text('#input-unit', info[source].unit);
   inputHelpEl.textContent = inputFormatHint(source, market);
-  amountInput.inputMode = inputDecimalPlaces(source, market) === 0 ? 'numeric' : 'decimal';
   amountInput.classList.toggle('long-amount', amountInput.value.length > 12);
   document.querySelectorAll<HTMLInputElement>('input[name="source"]').forEach(input => { input.checked = input.value === source; });
   sourceSelect.value = source;

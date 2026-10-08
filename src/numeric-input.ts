@@ -1,5 +1,6 @@
 import Decimal from 'decimal.js';
 import { translator } from './i18n';
+import { localeFor } from './market';
 import type { Market } from './market';
 
 export const MAX_INPUT_LENGTH = 48;
@@ -61,9 +62,19 @@ export function bindNumericInput(input: HTMLInputElement, options: NumericInputO
   let composing = false;
 
   function sync() {
-    if (!composing && !numericInputError(input.value, options.rules(), true)) {
+    const rules = options.rules();
+    input.inputMode = rules.separator ? 'decimal' : 'numeric';
+    input.lang = rules.separator === '.' ? 'en-US' : rules.separator === ',' ? 'es-AR' : localeFor(rules.market ?? 'ar');
+    if (!composing && !numericInputError(input.value, rules, true)) {
       previous = { value: input.value, start: input.selectionStart, end: input.selectionEnd };
     }
+  }
+
+  // A decimal keyboard can ignore the field's language and use the device's separator.
+  // Adapt only a single typed key; pasted or replaced numeric strings stay strict.
+  function keyboardText(text: string, inputType: string) {
+    const separator = options.rules().separator;
+    return inputType === 'insertText' && separator && /^[.,]$/.test(text) ? separator : text;
   }
 
   function proposed(text: string) {
@@ -78,13 +89,30 @@ export function bindNumericInput(input: HTMLInputElement, options: NumericInputO
     sync();
   }
 
-  function checkCurrent() {
-    const error = numericInputError(input.value, options.rules(), true);
+  function checkCurrent(inputType = '') {
+    let value = input.value;
+    if (inputType === 'insertText') {
+      let start = 0;
+      while (start < previous.value.length && start < value.length && previous.value[start] === value[start]) start++;
+      let end = value.length;
+      let previousEnd = previous.value.length;
+      while (end > start && previousEnd > start && value[end - 1] === previous.value[previousEnd - 1]) { end--; previousEnd--; }
+      const inserted = value.slice(start, end);
+      value = value.slice(0, start) + keyboardText(inserted, inputType) + value.slice(end);
+    }
+    const error = numericInputError(value, options.rules(), true);
     if (error) {
       input.value = previous.value;
       input.setSelectionRange(previous.start, previous.end);
       options.onReject(error);
-    } else accept();
+    } else {
+      if (value !== input.value) {
+        const { selectionStart, selectionEnd } = input;
+        input.value = value;
+        input.setSelectionRange(selectionStart, selectionEnd);
+      }
+      accept();
+    }
   }
 
   input.addEventListener('beforeinput', event => {
@@ -92,13 +120,14 @@ export function bindNumericInput(input: HTMLInputElement, options: NumericInputO
     if (composing || change.isComposing) return;
     sync();
     if (!change.inputType.startsWith('insert')) return;
-    const text = change.data ?? change.dataTransfer?.getData('text/plain');
+    const raw = change.data ?? change.dataTransfer?.getData('text/plain');
     // Some keyboards, autofill and history operations only expose the final value in input.
-    if (text == null || !change.cancelable) return;
+    if (raw == null || !change.cancelable) return;
+    const text = keyboardText(raw, change.inputType);
     const next = proposed(text);
     const error = numericInputError(next.value, options.rules(), true);
     if (error) { change.preventDefault(); options.onReject(error); }
-    else if (next.replaceZero) {
+    else if (next.replaceZero || text !== raw) {
       change.preventDefault();
       input.value = next.value;
       input.setSelectionRange(next.start + text.length, next.start + text.length);
@@ -130,10 +159,12 @@ export function bindNumericInput(input: HTMLInputElement, options: NumericInputO
   });
 
   input.addEventListener('input', event => {
-    if (!composing && !(event as InputEvent).isComposing) checkCurrent();
+    const change = event as InputEvent;
+    if (!composing && !change.isComposing) checkCurrent(change.inputType);
   });
   input.addEventListener('compositionstart', () => { sync(); composing = true; });
   input.addEventListener('compositionend', () => { composing = false; checkCurrent(); });
   input.addEventListener('select', () => { if (!composing && input.value === previous.value) sync(); });
+  sync();
   return { sync };
 }

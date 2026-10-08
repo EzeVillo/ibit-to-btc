@@ -27,7 +27,8 @@ export function getCostInputRules(market: Market = 'ar'): NumericInputRules {
 export const COST_INPUT_RULES = getCostInputRules();
 
 export function getCostUnit(source: Asset, market: Market = 'ar'): CostUnit {
-  return source === 'ibit' || (market === 'global' && source === 'usd') ? 'ibit' : source === 'btc' || source === 'sats' ? 'btc' : 'cedear';
+  if (market === 'global') return 'ibit';
+  return source === 'ibit' ? 'ibit' : source === 'btc' || source === 'sats' ? 'btc' : 'cedear';
 }
 
 export function parseAverageCost(raw: string, market: Market = 'ar'): Decimal | null {

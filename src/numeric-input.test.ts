@@ -1,14 +1,14 @@
 import { describe, expect, it, vi } from 'vitest';
-import { COST_INPUT_RULES, parseAverageCost } from './average-cost';
-import { assets, getAmountInputRules, parseAmount } from './conversion';
+import { COST_INPUT_RULES, getCostInputRules, parseAverageCost } from './average-cost';
+import { assets, assetsFor, getAmountInputRules, parseAmount } from './conversion';
 import { bindNumericInput, numericInputError } from './numeric-input';
 import type { NumericInputRules } from './numeric-input';
 
 describe('global input editing with the same native-event guard', () => {
-  it('blocks incorrect separators, symbols and excess precision while preserving the current value', () => {
+  it('adapts the keyboard decimal key and blocks symbols and excess precision', () => {
     const { input, insert, onReject } = setup('12', () => getAmountInputRules('usd', 'global'));
-    expect(insert(',').defaultPrevented).toBe(true); expect(input.value).toBe('12'); expect(onReject).toHaveBeenLastCalledWith(expect.stringContaining('decimal point'));
-    insert('.'); insert('50'); expect(input.value).toBe('12.50');
+    insert(','); expect(input.value).toBe('12.'); expect(onReject).not.toHaveBeenCalled();
+    insert('50'); expect(input.value).toBe('12.50');
     expect(insert('1').defaultPrevented).toBe(true); expect(input.value).toBe('12.50');
     expect(insert('x').defaultPrevented).toBe(true); expect(onReject).toHaveBeenLastCalledWith(expect.stringContaining('digits'));
   });
@@ -26,6 +26,8 @@ describe('global input editing with the same native-event guard', () => {
 
 // Native EventTarget exercises cancellation and fallback without adding a DOM dependency.
 class TestInput extends EventTarget {
+  inputMode = '';
+  lang = '';
   value: string;
   selectionStart: number;
   selectionEnd: number;
@@ -47,7 +49,7 @@ function setup(value = '', rules: () => NumericInputRules = () => getAmountInput
       const start = input.selectionStart;
       input.value = input.value.slice(0, start) + text + input.value.slice(input.selectionEnd);
       input.setSelectionRange(start + text.length, start + text.length);
-      input.dispatchEvent(new Event('input'));
+      input.dispatchEvent(Object.assign(new Event('input'), { inputType: 'insertText', data: text }));
     }
     return event;
   }
@@ -88,7 +90,7 @@ describe('mensajes numéricos específicos', () => {
 });
 
 describe('bloqueo de la edición completa', () => {
-  it.each(['a', '$', '%', '+', '-', ' ', '\t', '1e3', '.', ',,', ',123', '1'.repeat(49)])('rechaza escribir %j y conserva cantidad y cursor', text => {
+  it.each(['a', '$', '%', '+', '-', ' ', '\t', '1e3', '..', ',,', ',123', '1'.repeat(49)])('rechaza escribir %j y conserva cantidad y cursor', text => {
     const { input, insert, onReject, onAccept } = setup('12');
     input.setSelectionRange(1, 1);
     expect(insert(text).defaultPrevented).toBe(true);
@@ -180,6 +182,101 @@ describe('bloqueo de la edición completa', () => {
     input.value = '0.01'; input.setSelectionRange(4, 4); guard.sync();
     insert(','); expect(input.value).toBe('0.01');
     insert('2'); expect(input.value).toBe('0.012');
+  });
+});
+
+describe('teclado decimal según campo y versión', () => {
+  for (const market of ['ar', 'global'] as const) {
+    it.each(assetsFor(market))(`${market}: configura el teclado y adapta la tecla decimal para %s`, asset => {
+      const rules = getAmountInputRules(asset, market);
+      const { input, insert, onReject } = setup('', () => rules);
+      expect(input.inputMode).toBe(rules.separator ? 'decimal' : 'numeric');
+      expect(input.lang).toBe(rules.separator === '.' || market === 'global' ? 'en-US' : 'es-AR');
+      if (!rules.separator) {
+        insert(','); insert('.');
+        expect(input.value).toBe('');
+        expect(onReject).toHaveBeenCalledTimes(2);
+        return;
+      }
+      const keyboardSeparator = rules.separator === '.' ? ',' : '.';
+      insert('0'); insert(keyboardSeparator); insert('01');
+      expect(input.value).toBe(`0${rules.separator}01`);
+      expect(parseAmount(input.value, asset, market)!.eq('0.01')).toBe(true);
+      expect(onReject).not.toHaveBeenCalled();
+      insert(keyboardSeparator);
+      expect(input.value).toBe(`0${rules.separator}01`);
+      expect(onReject).toHaveBeenCalledOnce();
+    });
+
+    it(`${market}: adapta también la tecla decimal del precio promedio`, () => {
+      const rules = getCostInputRules(market);
+      const { input, insert, onReject } = setup('', () => rules);
+      insert('43'); insert(rules.separator === '.' ? ',' : '.'); insert('68');
+      expect(parseAverageCost(input.value, market)!.eq('43.68')).toBe(true);
+      expect(onReject).not.toHaveBeenCalled();
+      insert('1');
+      expect(input.value).toBe(`43${rules.separator}68`);
+      expect(onReject).toHaveBeenCalledWith(rules.precisionMessage);
+    });
+
+    it(`${market}: mantiene estricto el formato al pegar o reemplazar valores completos`, () => {
+      const rules = getCostInputRules(market);
+      const { input, insert, paste, onReject } = setup('12', () => rules);
+      input.setSelectionRange(0, 2);
+      const invalid = rules.separator === '.' ? '43,68' : '43.68';
+      paste(invalid);
+      insert(invalid);
+      expect(input.value).toBe('12');
+      expect(onReject).toHaveBeenCalledTimes(2);
+    });
+  }
+
+  it.each([true, false])('adapta la coma de BTC al reemplazar una selección (cancelable: %s)', cancelable => {
+    const { input, insert, onReject } = setup('123', () => getAmountInputRules('btc'));
+    input.setSelectionRange(1, 2);
+    insert(',', cancelable);
+    expect(input.value).toBe('1.3');
+    expect(input.selectionStart).toBe(2);
+    expect(onReject).not.toHaveBeenCalled();
+  });
+
+  it('adapta una tecla decimal cuando solo se recibe input, sin beforeinput ni data', () => {
+    const { input, onReject } = setup('0', () => getAmountInputRules('btc'));
+    input.value = '0,';
+    input.setSelectionRange(2, 2);
+    input.dispatchEvent(Object.assign(new Event('input'), { inputType: 'insertText', data: null }));
+    expect(input.value).toBe('0.');
+    expect(input.selectionStart).toBe(2);
+    expect(onReject).not.toHaveBeenCalled();
+  });
+
+  it.each(['insertFromPaste', 'insertFromDrop', 'insertReplacementText', 'historyUndo'])('no adapta separadores en input de tipo %s', inputType => {
+    const { input, onReject } = setup('0', () => getAmountInputRules('btc'));
+    input.value = '0,';
+    input.dispatchEvent(Object.assign(new Event('input'), { inputType, data: ',' }));
+    expect(input.value).toBe('0');
+    expect(onReject).toHaveBeenCalledWith(expect.stringContaining('Usá punto decimal'));
+  });
+
+  it('no adapta una tecla decimal pegada', () => {
+    const { input, paste, onReject } = setup('0', () => getAmountInputRules('btc'));
+    paste(',');
+    expect(input.value).toBe('0');
+    expect(onReject).toHaveBeenCalledOnce();
+  });
+
+  it('actualiza el teclado al cambiar entre BTC, moneda argentina y enteros', () => {
+    let rules = getAmountInputRules('btc');
+    const { input, guard, insert } = setup('', () => rules);
+    expect(input.lang).toBe('en-US');
+    rules = getAmountInputRules('ars'); guard.sync();
+    expect(input.lang).toBe('es-AR');
+    insert('.'); insert('5');
+    expect(input.value).toBe(',5');
+    rules = getAmountInputRules('sats'); input.value = ''; guard.sync();
+    expect(input.inputMode).toBe('numeric');
+    insert('.');
+    expect(input.value).toBe('');
   });
 });
 

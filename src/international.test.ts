@@ -100,12 +100,27 @@ describe('global average purchase cost and copy', () => {
     expect(model.view(rates).equivalents!.btc.eq(78000)).toBe(true);
     expect(model.view({ ...rates, ibitUsd: null, quoteStatus: 'unavailable' }).equivalents!.btc.eq(78000)).toBe(true);
     expect(model.view(rates).equivalents!.cedear).toBeNull();
-    model.setSource('btc'); expect(model.view(rates).input).toBe('78000');
+    model.setSource('btc'); expect(model.view(rates).input).toBe('43.68');
     model.setSource('ibit'); expect(model.view(rates).input).toBe('43.68');
     model.clear(); expect(model.view(rates).hasPrice).toBe(false);
   });
+  it.each(assetsFor('global'))('keeps the average price per IBIT share when converting from %s', source => {
+    const model = new AverageCostModel('global');
+    model.setPrice('43.68');
+    model.setSource(source);
+    expect(getCostUnit(source, 'global')).toBe('ibit');
+    expect(model.view(null)).toMatchObject({ input: '43.68', inputApproximate: false, hasPrice: true });
+    expect(model.view(rates).input).toBe('43.68');
+    expect(model.view(rates).equivalents!.btc.eq(78000)).toBe(true);
+    model.setPrice('44.80');
+    expect(model.view(rates).equivalents!.ibit.eq('44.8')).toBe(true);
+    expect(model.view(rates).equivalents!.btc.eq(80000)).toBe(true);
+    model.setSource('ibit');
+    expect(model.view(rates).input).toBe('44.80');
+  });
   it('retains the original purchase price when the exposure report changes', () => {
     const model = new AverageCostModel('global'); model.setPrice('43.68');
+    model.setSource('btc');
     expect(model.view({ ...rates, holdingsBtc: '28' }).equivalents!.btc.eq(156000)).toBe(true);
     expect(model.view(rates).input).toBe('43.68');
   });
@@ -119,6 +134,7 @@ describe('global average purchase cost and copy', () => {
     const markup = methodologyMarkup('global') + averageCostMarkup('global');
     expect(markup).not.toMatch(/CEDEAR|MEP|CCL|Comafi|ARS|Ingresá|Calculá|cotización/);
     expect(markup).toContain('Finnhub'); expect(markup).toContain('Average price per IBIT share');
+    expect(markup).not.toContain('price per BTC');
   });
 });
 

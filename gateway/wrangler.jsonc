@@ -1,0 +1,24 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "ibit-rates-gateway",
+  "main": "worker.ts",
+  "compatibility_date": "2026-10-08",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "APP_BASE_PATH": "/ibit-to-btc/",
+    "ALLOWED_ORIGIN": "https://ezevillo.com"
+  },
+  "kv_namespaces": [
+    { "binding": "RATES_KV", "id": "REPLACE_WITH_KV_NAMESPACE_ID" }
+  ],
+  "durable_objects": {
+    "bindings": [{ "name": "RATES_COORDINATOR", "class_name": "RatesCoordinator" }]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["RatesCoordinator"] }
+  ],
+  "ratelimits": [
+    { "name": "IP_LIMITER", "namespace_id": "781013", "simple": { "limit": 60, "period": 60 } }
+  ]
+}

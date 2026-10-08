@@ -1,0 +1,770 @@
+{
+  "home": {
+    "es": "IBIT to BTC, inicio",
+    "en": "IBIT to BTC, home"
+  },
+  "version": {
+    "es": "Versión de la aplicación",
+    "en": "Application version"
+  },
+  "theme": {
+    "es": "Tema",
+    "en": "Theme"
+  },
+  "themeLabel": {
+    "es": "Tema de la aplicación",
+    "en": "Application theme"
+  },
+  "system": {
+    "es": "Sistema",
+    "en": "System"
+  },
+  "light": {
+    "es": "Claro",
+    "en": "Light"
+  },
+  "dark": {
+    "es": "Oscuro",
+    "en": "Dark"
+  },
+  "eyebrow": {
+    "es": "CONVERSOR IBIT",
+    "en": "IBIT CONVERTER"
+  },
+  "title": {
+    "es": "¿Desde qué querés convertir?",
+    "en": "What would you like to convert from?"
+  },
+  "intro": {
+    "es": "Ingresá una cantidad para convertir.",
+    "en": "Enter an amount to convert."
+  },
+  "converterAr": {
+    "es": "Conversor de CEDEAR, IBIT, BTC, satoshis, pesos, dólares MEP y dólares CCL",
+    "en": "Converter for CEDEAR, IBIT, BTC, satoshis, pesos, MEP dollars and CCL dollars"
+  },
+  "converterGlobal": {
+    "es": "Conversor de IBIT, BTC, satoshis y dólares estadounidenses",
+    "en": "Converter for IBIT, BTC, satoshis and US dollars"
+  },
+  "convertFrom": {
+    "es": "Convertir desde",
+    "en": "Convert from"
+  },
+  "quantity": {
+    "es": "TU CANTIDAD",
+    "en": "YOUR QUANTITY"
+  },
+  "moneyAmount": {
+    "es": "TU MONTO A CONVERTIR",
+    "en": "YOUR AMOUNT TO CONVERT"
+  },
+  "equivalences": {
+    "es": "EQUIVALENCIAS DE TU CANTIDAD",
+    "en": "EQUIVALENTS OF YOUR QUANTITY"
+  },
+  "moneyEquivalences": {
+    "es": "EQUIVALENCIAS DE TU MONTO",
+    "en": "EQUIVALENTS OF YOUR AMOUNT"
+  },
+  "clear": {
+    "es": "Limpiar",
+    "en": "Clear"
+  },
+  "automatic": {
+    "es": "Conversión automática",
+    "en": "Automatic conversion"
+  },
+  "useSource": {
+    "es": "Usar como origen",
+    "en": "Use as source"
+  },
+  "convertAsset": {
+    "es": "Convertir desde {asset}",
+    "en": "Convert from {asset}"
+  },
+  "approximately": {
+    "es": "aproximadamente",
+    "en": "approximately"
+  },
+  "noQuote": {
+    "es": "Sin cotización",
+    "en": "Quote unavailable"
+  },
+  "notAvailable": {
+    "es": "{asset} no disponible",
+    "en": "{asset} unavailable"
+  },
+  "loading": {
+    "es": "Consultando equivalencias…",
+    "en": "Loading equivalents…"
+  },
+  "refresh": {
+    "es": "Actualizar",
+    "en": "Refresh"
+  },
+  "refreshLabel": {
+    "es": "Actualizar cotizaciones",
+    "en": "Refresh quotes"
+  },
+  "sourceData": {
+    "es": "Las equivalencias se calculan con datos de las fuentes.",
+    "en": "Equivalents are calculated using data from the sources."
+  },
+  "emptyResults": {
+    "es": "Ingresá una cantidad para ver sus equivalencias.",
+    "en": "Enter an amount to see its equivalents."
+  },
+  "reference": {
+    "es": "Cotizaciones de referencia, sin comisiones ni spread.",
+    "en": "Reference quotes, excluding fees and spreads."
+  },
+  "currencyNoteAr": {
+    "es": "ARS, USD MEP y USD CCL muestran el valor de los CEDEAR, según la especie elegida.",
+    "en": "ARS, USD MEP and USD CCL show the value of CEDEARs for the selected trading variant."
+  },
+  "currencyNoteGlobal": {
+    "es": "USD muestra el valor de las cuotas de IBIT según su cotización en Estados Unidos.",
+    "en": "USD shows the value of IBIT shares using their US market quote."
+  },
+  "fractionalCedear": {
+    "es": "CEDEAR fraccionarios: equivalencia teórica. Para operar, se necesitan unidades enteras.",
+    "en": "Fractional CEDEARs: theoretical equivalent. Trading requires whole units."
+  },
+  "fractionalIbit": {
+    "es": "Cuotas fraccionarias de IBIT: equivalencia teórica. Al elegir IBIT como origen, se usan unidades enteras.",
+    "en": "Fractional IBIT shares: theoretical equivalent. Choosing IBIT as the source uses whole units."
+  },
+  "privacy": {
+    "es": "Tus cantidades se calculan en tu navegador.",
+    "en": "Your amounts are calculated in your browser."
+  },
+  "cedearSubtitle": {
+    "es": "Mercado argentino",
+    "en": "Argentine market"
+  },
+  "ibitSubtitle": {
+    "es": "ETF de Bitcoin",
+    "en": "Bitcoin ETF"
+  },
+  "satsSubtitle": {
+    "es": "Unidad de Bitcoin",
+    "en": "Bitcoin unit"
+  },
+  "usdSubtitle": {
+    "es": "Mercado estadounidense",
+    "en": "US market"
+  },
+  "cedearInput": {
+    "es": "Cantidad de CEDEAR de IBIT",
+    "en": "Number of IBIT CEDEARs"
+  },
+  "ibitInput": {
+    "es": "Cantidad de cuotas de IBIT",
+    "en": "Number of IBIT shares"
+  },
+  "btcInput": {
+    "es": "Cantidad de Bitcoin",
+    "en": "Amount of Bitcoin"
+  },
+  "satsInput": {
+    "es": "Cantidad de satoshis",
+    "en": "Number of satoshis"
+  },
+  "usdInput": {
+    "es": "Monto a convertir en dólares estadounidenses",
+    "en": "Amount to convert in US dollars"
+  },
+  "mepInput": {
+    "es": "Monto a convertir en dólares MEP",
+    "en": "Amount to convert in MEP dollars"
+  },
+  "cclInput": {
+    "es": "Monto a convertir en dólares CCL",
+    "en": "Amount to convert in CCL dollars"
+  },
+  "arsInput": {
+    "es": "Monto a convertir en pesos",
+    "en": "Amount to convert in pesos"
+  },
+  "cedearExplanation": {
+    "es": "Cada CEDEAR representa una fracción de una cuota de IBIT.",
+    "en": "Each CEDEAR represents a fraction of an IBIT share."
+  },
+  "cedearRatioExplanation": {
+    "es": "{cedears} CEDEAR representan {shares} cuota de IBIT.",
+    "en": "{cedears} CEDEARs represent {shares} IBIT share."
+  },
+  "ibitExplanation": {
+    "es": "Cada cuota de IBIT representa una parte de los Bitcoin del fondo.",
+    "en": "Each IBIT share represents a portion of the fund’s Bitcoin."
+  },
+  "btcExplanationAr": {
+    "es": "Calculá qué cantidad de IBIT o CEDEAR representa esta exposición a Bitcoin.",
+    "en": "Calculate how many IBIT shares or CEDEARs represent this Bitcoin exposure."
+  },
+  "btcExplanationGlobal": {
+    "es": "Calculá qué cantidad de IBIT representa esta exposición a Bitcoin.",
+    "en": "Calculate how many IBIT shares represent this Bitcoin exposure."
+  },
+  "satsExplanationAr": {
+    "es": "1 BTC = 100000000 sats. Calculá la exposición equivalente en Bitcoin, IBIT y CEDEAR.",
+    "en": "1 BTC = 100000000 sats. Calculate the equivalent exposure in Bitcoin, IBIT and CEDEARs."
+  },
+  "satsExplanationGlobal": {
+    "es": "1 BTC = 100000000 sats. Calculá la exposición equivalente en Bitcoin e IBIT.",
+    "en": "1 BTC = 100000000 sats. Calculate the equivalent exposure in Bitcoin and IBIT."
+  },
+  "mepExplanation": {
+    "es": "Valor de los CEDEAR en dólares MEP, según la cotización de IBITD.",
+    "en": "CEDEAR value in MEP dollars, using the IBITD quote."
+  },
+  "cclExplanation": {
+    "es": "Valor de los CEDEAR en dólares CCL, según la cotización de IBITC.",
+    "en": "CEDEAR value in CCL dollars, using the IBITC quote."
+  },
+  "arsExplanation": {
+    "es": "Valuación de los CEDEAR de IBIT en pesos, tomando su cotización de referencia.",
+    "en": "IBIT CEDEAR valuation in pesos, using its reference quote."
+  },
+  "usdExplanation": {
+    "es": "Valor de las cuotas de IBIT en dólares estadounidenses, según la cotización de la API.",
+    "en": "IBIT share value in US dollars, using the API quote."
+  },
+  "methodTitle": {
+    "es": "¿Cómo se calcula?",
+    "en": "How is it calculated?"
+  },
+  "cedearMethodTitle": {
+    "es": "CEDEAR e IBIT",
+    "en": "CEDEAR and IBIT"
+  },
+  "cedearMethod": {
+    "es": "Consultamos el ratio publicado por Banco Comafi.",
+    "en": "We use the ratio published by Banco Comafi."
+  },
+  "cedearMethodLoaded": {
+    "es": "{cedears} CEDEAR = {shares} IBIT. El ratio se consulta automáticamente en Comafi.",
+    "en": "{cedears} CEDEARs = {shares} IBIT. The ratio is retrieved automatically from Comafi."
+  },
+  "comafiLink": {
+    "es": "Ver programa en Comafi",
+    "en": "View the program on Comafi"
+  },
+  "btcMethodTitle": {
+    "es": "IBIT y Bitcoin",
+    "en": "IBIT and Bitcoin"
+  },
+  "btcMethod": {
+    "es": "Dividimos los BTC del fondo por las cuotas de IBIT en circulación, usando el mismo informe de iShares.",
+    "en": "We divide the fund’s BTC by outstanding IBIT shares, using the same iShares report."
+  },
+  "btcMethodLoaded": {
+    "es": "1 IBIT ≈ {btc} BTC. Dividimos los BTC del fondo por las cuotas en circulación del informe del {date}.",
+    "en": "1 IBIT ≈ {btc} BTC. We divide the fund’s BTC by outstanding shares in the report dated {date}."
+  },
+  "fundTrading": {
+    "es": "Comprar o vender IBIT en bolsa transfiere cuotas entre compradores y vendedores; por sí solo no obliga al fondo a comprar o vender BTC. Al crear o rescatar cuotas, intermediarios autorizados aportan o retiran BTC, o efectivo para esas operaciones. Cambian tanto los activos del fondo como la cantidad de cuotas, por lo que las entradas de dinero no aumentan por sí mismas los BTC por cuota.",
+    "en": "Buying or selling IBIT on the exchange transfers shares between buyers and sellers; this alone does not require the fund to buy or sell BTC. When shares are created or redeemed, authorized participants contribute or withdraw BTC, or cash for those transactions. Both the fund’s assets and its share count change, so inflows alone do not increase BTC per share."
+  },
+  "fundFees": {
+    "es": "Los BTC y satoshis por cuota no son una constante: tienden a disminuir gradualmente por las comisiones y gastos del fondo. Por eso usamos la equivalencia del informe disponible. El precio de mercado de IBIT también puede cotizar por encima o por debajo del valor de sus activos.",
+    "en": "BTC and satoshis per share are not constant: they tend to decrease gradually due to the fund’s fees and expenses. We therefore use the equivalent from the available report. IBIT’s market price can also trade above or below the value of its assets."
+  },
+  "cedearFees": {
+    "es": "Los sats por CEDEAR siguen esa variación según el ratio CEDEAR/IBIT.",
+    "en": "Sats per CEDEAR follow that change according to the CEDEAR/IBIT ratio."
+  },
+  "isharesLink": {
+    "es": "Ver fondo en iShares",
+    "en": "View the fund on iShares"
+  },
+  "satsMethodTitle": {
+    "es": "Bitcoin y satoshis",
+    "en": "Bitcoin and satoshis"
+  },
+  "satsMethod": {
+    "es": "1 BTC = 100000000 sats. Multiplicamos la exposición en BTC por esa cantidad. Los satoshis se ingresan y se muestran sin comas, puntos ni decimales. Si la equivalencia es fraccionaria, el resultado se redondea al entero más cercano (0,5 hacia arriba) con un indicador de aproximación; al usarlo como origen, recalculamos con ese entero.",
+    "en": "1 BTC = 100000000 sats. We multiply BTC exposure by that amount. Satoshis are entered and displayed without commas, dots or decimal places. If the equivalent is fractional, the result is rounded to the nearest whole number (0.5 rounds up) with an approximation indicator; using it as the source recalculates with that whole number."
+  },
+  "moneyMethodTitleAr": {
+    "es": "Pesos, MEP y CCL",
+    "en": "Pesos, MEP and CCL"
+  },
+  "moneyMethodTitleGlobal": {
+    "es": "Dólares estadounidenses e IBIT",
+    "en": "US dollars and IBIT"
+  },
+  "moneyMethodAr": {
+    "es": "ARS usa IBIT en pesos. USD MEP usa IBITD. USD CCL usa IBITC. Dividimos el monto por el precio de esa especie para obtener CEDEAR; después redondeamos esa cantidad a unidades enteras. Una fracción de medio CEDEAR o más suma una unidad; una fracción menor se descarta. Los demás resultados usan la cantidad redondeada. Los montos valúan CEDEAR y no usan BTC spot ni un tipo de cambio.",
+    "en": "ARS uses IBIT in pesos. USD MEP uses IBITD. USD CCL uses IBITC. We divide the amount by that variant’s price to obtain CEDEARs, then round to whole units. A fraction of half a CEDEAR or more adds one unit; a smaller fraction is discarded. Other results use the rounded quantity. Amounts value CEDEARs and do not use spot BTC or an exchange rate."
+  },
+  "moneyMethodGlobal": {
+    "es": "Dividimos USD por el precio de una cuota de IBIT obtenido de la API de Finnhub y redondeamos al entero más cercano: media cuota o más suma una unidad; una fracción menor se descarta. Los demás resultados usan las cuotas enteras. Mostramos su valor y cuánto sobra o falta. IBIT se ingresa en unidades enteras; las fracciones que aparecen desde BTC o satoshis son equivalencias teóricas. USD valúa IBIT y no representa el precio spot de Bitcoin ni el NAV del fondo.",
+    "en": "We divide USD by the IBIT share price retrieved from the Finnhub API and round to the nearest whole number: half a share or more adds one unit; a smaller fraction is discarded. Other results use the whole shares. We show their value and any amount left over or needed. IBIT is entered in whole units; fractions shown from BTC or satoshis are theoretical equivalents. USD values IBIT and does not represent Bitcoin’s spot price or the fund’s NAV."
+  },
+  "marketLoading": {
+    "es": "Las cotizaciones aparecerán al cargar los datos.",
+    "en": "Quotes will appear when the data loads."
+  },
+  "providerLink": {
+    "es": "Ver proveedor de cotizaciones",
+    "en": "View the quote provider"
+  },
+  "data912Detail": {
+    "es": "IBIT: ARS {price}. Data912 ofrece referencias diferidas y no informa la fecha ni la hora de la última operación.",
+    "en": "IBIT: ARS {price}. Data912 provides delayed references and does not report the date or time of the last trade."
+  },
+  "globalQuoteDetail": {
+    "es": "IBIT: USD {price}. Fecha de la cotización: {date}. Fuente: Finnhub. Consultamos cada 15 minutos; no prometemos tiempo real.",
+    "en": "IBIT: USD {price}. Quote timestamp: {date}. Source: Finnhub. We refresh every 15 minutes; real-time data is not guaranteed."
+  },
+  "globalQuoteUnavailable": {
+    "es": "No pudimos obtener la cotización de IBIT en USD. Podés seguir convirtiendo IBIT, BTC y satoshis con el informe del fondo.",
+    "en": "We could not retrieve the IBIT USD quote. You can still convert IBIT, BTC and satoshis using the fund report."
+  },
+  "costTitle": {
+    "es": "Tu costo equivalente por BTC",
+    "en": "Your equivalent cost per BTC"
+  },
+  "costIntro": {
+    "es": "Calculalo a partir de tu precio promedio de compra.",
+    "en": "Calculate it from your average purchase price."
+  },
+  "costCurrency": {
+    "es": "Moneda de tu promedio",
+    "en": "Currency of your average price"
+  },
+  "mepCurrency": {
+    "es": "Dólares MEP",
+    "en": "MEP dollars"
+  },
+  "cclCurrency": {
+    "es": "Dólares CCL",
+    "en": "CCL dollars"
+  },
+  "usdCurrency": {
+    "es": "Dólares estadounidenses (USD)",
+    "en": "US dollars (USD)"
+  },
+  "ibitUnit": {
+    "es": "cuota de IBIT",
+    "en": "IBIT share"
+  },
+  "costPrice": {
+    "es": "Precio promedio por {unit}",
+    "en": "Average price per {unit}"
+  },
+  "costExample": {
+    "es": "Ej. {value}",
+    "en": "e.g. {value}"
+  },
+  "costHelpAr": {
+    "es": "Ingresá el promedio de tu broker o exchange, con comisiones si están incluidas. Cada moneda conserva su propio promedio.",
+    "en": "Enter the average from your broker or exchange, including fees if they are part of it. Each currency keeps its own average."
+  },
+  "costHelpGlobal": {
+    "es": "Ingresá el promedio en USD de tu broker o exchange, con comisiones si están incluidas.",
+    "en": "Enter the USD average from your broker or exchange, including fees if they are part of it."
+  },
+  "costPerBtc": {
+    "es": "Costo por 1 BTC",
+    "en": "Cost per 1 BTC"
+  },
+  "costResultUnit": {
+    "es": "{currency} por 1 BTC",
+    "en": "{currency} per 1 BTC"
+  },
+  "costEnter": {
+    "es": "Ingresá tu precio promedio para calcular la equivalencia.",
+    "en": "Enter your average price to calculate the equivalent."
+  },
+  "costCorrect": {
+    "es": "Corregí el precio promedio para calcular la equivalencia.",
+    "en": "Correct the average price to calculate the equivalent."
+  },
+  "costWait": {
+    "es": "Esperá a que se cargue el informe de IBIT para calcular la equivalencia.",
+    "en": "Wait for the IBIT report to load to calculate the equivalent."
+  },
+  "costCalculated": {
+    "es": "Calculado con tu precio promedio y la equivalencia del informe de IBIT del {date}, en la moneda ingresada.",
+    "en": "Calculated using your average price and the equivalent from the IBIT report dated {date}, in the currency entered."
+  },
+  "costAdjustment": {
+    "es": "El campo muestra la equivalencia redondeada a 2 decimales. El cálculo conserva el promedio original; al editar, se usa el nuevo valor.",
+    "en": "The field shows the equivalent rounded to 2 decimal places. The calculation keeps the original average; editing uses the new value."
+  },
+  "costAnnouncement": {
+    "es": "Costo equivalente por BTC: {approximation}{value} {currency} por BTC.",
+    "en": "Equivalent cost per BTC: {approximation}{value} {currency} per BTC."
+  },
+  "costAnnouncementEmpty": {
+    "es": "Ingresá tu precio promedio y esperá los datos de IBIT.",
+    "en": "Enter your average price and wait for IBIT data."
+  },
+  "costMethodAr": {
+    "es": "Ingresá el precio promedio por CEDEAR, por cuota de IBIT o por BTC. Para satoshis, el precio se ingresa por BTC. Desde pesos, MEP o CCL, se ingresa por CEDEAR en esa moneda. Dividimos el precio por los BTC que representa esa unidad para obtener el costo equivalente de 1 BTC, con el informe de IBIT que muestra la pantalla.",
+    "en": "Enter the average price per CEDEAR, IBIT share or BTC. For satoshis, enter the price per BTC. From pesos, MEP or CCL, enter the price per CEDEAR in that currency. We divide the price by the BTC represented by that unit to obtain the equivalent cost of 1 BTC, using the IBIT report shown on screen."
+  },
+  "costMethodGlobal": {
+    "es": "Ingresá el precio promedio en USD por cuota de IBIT o por BTC. Para satoshis, el precio se ingresa por BTC. Desde USD, se ingresa por cuota de IBIT. Dividimos el precio por los BTC que representa esa unidad para obtener el costo equivalente de 1 BTC, con el informe de IBIT que muestra la pantalla.",
+    "en": "Enter the average USD price per IBIT share or BTC. For satoshis, enter the price per BTC. From USD, enter the price per IBIT share. We divide the price by the BTC represented by that unit to obtain the equivalent cost of 1 BTC, using the IBIT report shown on screen."
+  },
+  "costFeesAr": {
+    "es": "Cuando ingresás un precio promedio por CEDEAR o por cuota de IBIT, usamos la equivalencia del informe más reciente disponible para mostrar tu costo por BTC de exposición actual. Si cada CEDEAR o cuota pasa a representar menos BTC por las comisiones y gastos del fondo, tu costo equivalente por BTC aumenta aunque no hagas nuevas compras. Tu precio promedio de compra sigue siendo el mismo.",
+    "en": "When you enter an average price per CEDEAR or IBIT share, we use the equivalent from the latest available report to show your cost per BTC of current exposure. If each CEDEAR or share represents less BTC due to the fund’s fees and expenses, your equivalent cost per BTC increases even without new purchases. Your average purchase price stays the same."
+  },
+  "costFeesGlobal": {
+    "es": "Cuando ingresás un precio promedio por cuota de IBIT, usamos la equivalencia del informe más reciente disponible para mostrar tu costo por BTC de exposición actual. Si cada cuota pasa a representar menos BTC por las comisiones y gastos del fondo, tu costo equivalente por BTC aumenta aunque no hagas nuevas compras. Tu precio promedio de compra sigue siendo el mismo.",
+    "en": "When you enter an average price per IBIT share, we use the equivalent from the latest available report to show your cost per BTC of current exposure. If each share represents less BTC due to the fund’s fees and expenses, your equivalent cost per BTC increases even without new purchases. Your average purchase price stays the same."
+  },
+  "costHistory": {
+    "es": "Cambiar la cantidad no modifica el costo por BTC. El cálculo usa tu costo ingresado y la equivalencia del fondo; no reconstruye el precio de BTC ni el dólar de tus fechas de compra. El monto principal sigue convirtiéndose a cotizaciones actuales. Para calcular un promedio histórico, se necesitarían las compras y sus fechas.",
+    "en": "Changing the amount does not change the cost per BTC. The calculation uses your entered cost and the fund’s equivalent; it does not reconstruct BTC prices or exchange rates on your purchase dates. The main amount continues to convert at current quotes. Calculating a historical average would require purchases and their dates."
+  },
+  "costIndependent": {
+    "es": "Cada moneda conserva un promedio independiente.",
+    "en": "Each currency keeps an independent average."
+  },
+  "costReferenceAr": {
+    "es": "Para un costo ingresado por CEDEAR o IBIT, el resultado expresa el costo por BTC de exposición con ese informe. Es una referencia, no un precio exacto de BTC al que recuperarías tu inversión: también influyen la prima o descuento de IBIT, la cotización local del CEDEAR, la moneda y los costos de compra y venta.",
+    "en": "For a cost entered per CEDEAR or IBIT, the result expresses the cost per BTC of exposure using that report. It is a reference, not an exact BTC price at which you would recover your investment: IBIT’s premium or discount, the local CEDEAR quote, the currency and trading costs also matter."
+  },
+  "costReferenceGlobal": {
+    "es": "Para un costo ingresado por IBIT, el resultado expresa el costo por BTC de exposición con ese informe. Es una referencia, no un precio exacto de BTC al que recuperarías tu inversión: también influyen la prima o descuento de IBIT y los costos de compra y venta.",
+    "en": "For a cost entered per IBIT, the result expresses the cost per BTC of exposure using that report. It is a reference, not an exact BTC price at which you would recover your investment: IBIT’s premium or discount and trading costs also matter."
+  },
+  "disclaimer": {
+    "es": "BTC y satoshis representan la exposición equivalente a través de IBIT. Los montos son referencias de valuación, sin comisiones ni spread de compra y venta.",
+    "en": "BTC and satoshis represent equivalent exposure through IBIT. Amounts are valuation references, excluding fees and trading spreads."
+  },
+  "roundingUnits": {
+    "es": "Calculamos con {units} {asset} {whole}.",
+    "en": "We calculate using {units} whole {asset} {whole}."
+  },
+  "wholeOne": {
+    "es": "entero",
+    "en": "unit"
+  },
+  "wholeMany": {
+    "es": "enteros",
+    "en": "units"
+  },
+  "needed": {
+    "es": "Faltan {currency} {value}.",
+    "en": "An additional {currency} {value} is needed."
+  },
+  "leftover": {
+    "es": "Sobran {currency} {value}.",
+    "en": "{currency} {value} is left over."
+  },
+  "roundingValue": {
+    "es": "Valor: {currency} {value}. {difference}",
+    "en": "Value: {currency} {value}. {difference}"
+  },
+  "roundBtc": {
+    "es": "Al elegir BTC, redondeamos a {value} BTC.",
+    "en": "Choosing BTC rounds to {value} BTC."
+  },
+  "roundBtcHelp": {
+    "es": "La entrada admite hasta 8 decimales. Los demás resultados se recalculan con esa cantidad.",
+    "en": "The input allows up to 8 decimal places. Other results are recalculated using that amount."
+  },
+  "roundSats": {
+    "es": "Al elegir Satoshis, redondeamos a {value} sats.",
+    "en": "Choosing Satoshis rounds to {value} sats."
+  },
+  "roundSatsHelp": {
+    "es": "La entrada admite solo satoshis enteros. Los demás resultados se recalculan con esa cantidad.",
+    "en": "The input allows only whole satoshis. Other results are recalculated using that amount."
+  },
+  "previousEquivalent": {
+    "es": "La equivalencia anterior era {value} {asset}.",
+    "en": "The previous equivalent was {value} {asset}."
+  },
+  "roundWhole": {
+    "es": "Al elegir {asset}, usamos {units} unidades enteras.",
+    "en": "Choosing {asset} uses {units} whole units."
+  },
+  "roundWholeHelp": {
+    "es": "Los demás resultados se recalculan con esa cantidad.",
+    "en": "Other results are recalculated using that amount."
+  },
+  "statusAr": {
+    "es": "Ratio {ratio} · BTC del {date} · Cotizaciones diferidas",
+    "en": "Ratio {ratio} · BTC dated {date} · Delayed quotes"
+  },
+  "statusGlobal": {
+    "es": "BTC del {date} · Cotización de IBIT por API",
+    "en": "BTC dated {date} · IBIT quote from API"
+  },
+  "oldReport": {
+    "es": "El informe de BTC tiene más de 7 días. Las equivalencias usan esa fecha.",
+    "en": "The BTC report is more than 7 days old. Equivalents use that date."
+  },
+  "oldQuote": {
+    "es": "La cotización de IBIT tiene más de 7 días. Los valores USD usan esa fecha.",
+    "en": "The IBIT quote is more than 7 days old. USD values use that date."
+  },
+  "partialQuotes": {
+    "es": "No hay cotización para {currencies}. Podés seguir convirtiendo los activos y monedas con datos disponibles.",
+    "en": "Quotes are unavailable for {currencies}. You can still convert assets and currencies with available data."
+  },
+  "sourcesFailed": {
+    "es": "No pudimos obtener el informe de IBIT o el ratio necesario para calcular las equivalencias.",
+    "en": "We could not retrieve the IBIT report or the ratio needed to calculate equivalents."
+  },
+  "ratesOffline": {
+    "es": "Tu navegador está sin conexión. Reconectate para actualizar las equivalencias.",
+    "en": "Your browser is offline. Reconnect to refresh the equivalents."
+  },
+  "ratesNetwork": {
+    "es": "No pudimos conectar con el servicio de equivalencias. Revisá tu conexión y reintentá.",
+    "en": "We could not connect to the equivalents service. Check your connection and try again."
+  },
+  "ratesTimeout": {
+    "es": "La consulta tardó demasiado. Reintentá con Actualizar en unos momentos.",
+    "en": "The request took too long. Try Refresh again in a few moments."
+  },
+  "ratesBackend": {
+    "es": "El servidor no pudo responder correctamente. Reintentá en unos momentos.",
+    "en": "The server could not respond correctly. Try again in a few moments."
+  },
+  "ratesInvalid": {
+    "es": "Los datos recibidos están incompletos o no son válidos. No los usamos para calcular equivalencias.",
+    "en": "The received data is incomplete or invalid. We do not use it to calculate equivalents."
+  },
+  "sourceQuoteUnavailable": {
+    "es": "No hay cotización para {currency}. Conservamos tu importe mientras sigas en este origen. Para continuar, elegí otro origen disponible e ingresá una nueva cantidad, o reintentá con Actualizar.",
+    "en": "The quote for {currency} is unavailable. We keep your amount while you stay on this source. To continue, choose another available source and enter a new amount, or try Refresh again."
+  },
+  "sourceQuoteWait": {
+    "es": "Esperando la cotización de {currency} para convertir tu importe.",
+    "en": "Waiting for the {currency} quote to convert your amount."
+  },
+  "refreshFailed": {
+    "es": "No se pudo actualizar · Se mantienen los datos del {date}",
+    "en": "Refresh failed · Keeping data dated {date}"
+  },
+  "retry": {
+    "es": "Podés ingresar cantidades y costos; los resultados aparecerán cuando se carguen las fuentes. Reintentá con Actualizar.",
+    "en": "You can enter amounts and costs; results will appear once the sources load. Try again with Refresh."
+  },
+  "retryWithData": {
+    "es": "Podés seguir usando los últimos datos cargados; las cotizaciones pueden haber cambiado. Conservamos tus cantidades y costos. Reintentá con Actualizar.",
+    "en": "You can keep using the last loaded data; quotes may have changed. We keep your amounts and costs. Try again with Refresh."
+  },
+  "wholeCedearHint": {
+    "es": "Ingresá CEDEAR enteros, sin coma ni punto.",
+    "en": "Enter whole CEDEARs, without commas or dots."
+  },
+  "wholeIbitHint": {
+    "es": "Ingresá cuotas enteras de IBIT, sin coma ni punto.",
+    "en": "Enter whole IBIT shares, without commas or dots."
+  },
+  "satsHint": {
+    "es": "Ingresá satoshis enteros, sin comas, puntos ni separadores de miles. Máximo: 2100000000000000 sats.",
+    "en": "Enter whole satoshis, without commas, dots or thousands separators. Maximum: 2100000000000000 sats."
+  },
+  "btcHint": {
+    "es": "Usá punto decimal para BTC, por ejemplo 0.01. Hasta 8 decimales y un máximo de 21.000.000 BTC. No uses coma ni separadores de miles.",
+    "en": "Use a decimal point for BTC, for example 0.01. Up to 8 decimal places and a maximum of 21,000,000 BTC. Do not use commas or thousands separators."
+  },
+  "commaHint": {
+    "es": "Usá coma decimal, por ejemplo 1000,50. Hasta 2 decimales. No uses puntos ni separadores de miles.",
+    "en": "Use a decimal comma, for example 1000,50. Up to 2 decimal places. Do not use dots or thousands separators."
+  },
+  "dotHint": {
+    "es": "Usá punto decimal, por ejemplo 1000.50. Hasta 2 decimales. No uses comas ni separadores de miles.",
+    "en": "Use a decimal point, for example 1000.50. Up to 2 decimal places. Do not use commas or thousands separators."
+  },
+  "precisionBtc": {
+    "es": "Podés ingresar hasta 8 decimales para BTC.",
+    "en": "You can enter up to 8 decimal places for BTC."
+  },
+  "precisionMoney": {
+    "es": "Podés ingresar hasta 2 decimales.",
+    "en": "You can enter up to 2 decimal places."
+  },
+  "maximumBtc": {
+    "es": "La cantidad máxima es 21.000.000 BTC.",
+    "en": "The maximum amount is 21,000,000 BTC."
+  },
+  "maximumSats": {
+    "es": "La cantidad máxima es 2100000000000000 sats.",
+    "en": "The maximum amount is 2100000000000000 sats."
+  },
+  "maximumAmount": {
+    "es": "La cantidad máxima es 1.000.000.000.000.",
+    "en": "The maximum amount is 1,000,000,000,000."
+  },
+  "invalidAmount": {
+    "es": "La cantidad no es válida.",
+    "en": "The amount is invalid."
+  },
+  "wholeSats": {
+    "es": "Ingresá satoshis enteros, sin decimales.",
+    "en": "Enter whole satoshis, without decimal places."
+  },
+  "quoteMissing": {
+    "es": "La cotización de esta moneda no está disponible.",
+    "en": "The quote for this currency is unavailable."
+  },
+  "unsupportedAsset": {
+    "es": "Este origen no está disponible en esta versión.",
+    "en": "This source is unavailable in this version."
+  },
+  "tooLong": {
+    "es": "El número es demasiado largo. Podés ingresar hasta {maximum} caracteres.",
+    "en": "The number is too long. You can enter up to {maximum} characters."
+  },
+  "scientific": {
+    "es": "Escribí el número completo. No se admite notación científica (como 1e3).",
+    "en": "Write the full number. Scientific notation (such as 1e3) is not allowed."
+  },
+  "negative": {
+    "es": "No se permiten números negativos. Ingresá un número sin signo.",
+    "en": "Negative numbers are not allowed. Enter an unsigned number."
+  },
+  "spaces": {
+    "es": "No se permiten espacios ni separadores de miles. Escribí el número seguido.",
+    "en": "Spaces and thousands separators are not allowed. Write the number without spaces."
+  },
+  "digits": {
+    "es": "Usá solo números del 0 al 9. No se permiten letras, signos ni símbolos.",
+    "en": "Use only digits from 0 to 9. Letters, signs and symbols are not allowed."
+  },
+  "singleDot": {
+    "es": "Usá un solo punto decimal, sin separadores de miles.",
+    "en": "Use only one decimal point, without thousands separators."
+  },
+  "singleComma": {
+    "es": "Usá una sola coma decimal, sin separadores de miles.",
+    "en": "Use only one decimal comma, without thousands separators."
+  },
+  "completeDot": {
+    "es": "Completá el número después del punto decimal.",
+    "en": "Enter the rest of the number after the decimal point."
+  },
+  "completeComma": {
+    "es": "Completá el número después de la coma decimal.",
+    "en": "Complete the number after the decimal comma."
+  },
+  "pasteEmpty": {
+    "es": "El texto pegado no contiene un número. Copiá solo el valor numérico.",
+    "en": "The pasted text does not contain a number. Copy only the numeric value."
+  },
+  "costCommaHint": {
+    "es": "Usá coma decimal, hasta 2 decimales y sin separadores de miles.",
+    "en": "Use a decimal comma, up to 2 decimal places and no thousands separators."
+  },
+  "costDotHint": {
+    "es": "Usá punto decimal, hasta 2 decimales y sin separadores de miles.",
+    "en": "Use a decimal point, up to 2 decimal places and no thousands separators."
+  },
+  "costCommaError": {
+    "es": "Usá coma decimal para el precio promedio. Ejemplo: 4,37. No uses puntos ni separadores de miles.",
+    "en": "Use a decimal comma for the average price. Example: 4,37. Do not use dots or thousands separators."
+  },
+  "costDotError": {
+    "es": "Usá punto decimal para el precio promedio. Ejemplo: 4.37. No uses comas ni separadores de miles.",
+    "en": "Use a decimal point for the average price. Example: 4.37. Do not use commas or thousands separators."
+  },
+  "costPrecision": {
+    "es": "El precio promedio admite hasta 2 decimales.",
+    "en": "The average price allows up to 2 decimal places."
+  },
+  "costMaximum": {
+    "es": "El precio promedio máximo es 10³⁰ (un 1 seguido de 30 ceros).",
+    "en": "The maximum average price is 10³⁰ (1 followed by 30 zeros)."
+  },
+  "costZero": {
+    "es": "El precio promedio debe ser mayor que cero.",
+    "en": "The average price must be greater than zero."
+  },
+  "costInvalid": {
+    "es": "El precio promedio no es válido.",
+    "en": "The average price is invalid."
+  },
+  "exceedsBtc": {
+    "es": "La equivalencia supera el máximo de 21.000.000 BTC. Ingresá una cantidad dentro del límite.",
+    "en": "The equivalent exceeds the maximum of 21,000,000 BTC. Enter an amount within the limit."
+  },
+  "exceedsSats": {
+    "es": "La equivalencia supera el máximo de 2100000000000000 sats. Ingresá una cantidad dentro del límite.",
+    "en": "The equivalent exceeds the maximum of 2100000000000000 sats. Enter an amount within the limit."
+  },
+  "toolInvalid": {
+    "es": "Ingresá un origen válido y una cantidad decimal.",
+    "en": "Enter a valid source and a decimal amount."
+  },
+  "toolWait": {
+    "es": "Ingresá una cantidad y esperá a que se carguen las fuentes.",
+    "en": "Enter an amount and wait for the sources to load."
+  },
+  "toolTitle": {
+    "es": "Convertir exposición de IBIT",
+    "en": "Convert IBIT exposure"
+  },
+  "toolDescriptionAr": {
+    "es": "Convierte desde CEDEAR, IBIT, BTC, satoshis (asset sats), ARS, USD MEP (asset usd, IBITD) o USD CCL (asset usd_ccl, IBITC). 1 BTC equivale a 100000000 sats. Desde monedas, redondea la cantidad equivalente de CEDEAR al entero más cercano (medio CEDEAR hacia arriba) y devuelve el ajuste de dinero. Las monedas valúan CEDEAR usando cada especie.",
+    "en": "Converts from CEDEAR, IBIT, BTC, satoshis (asset sats), ARS, USD MEP (asset usd, IBITD) or USD CCL (asset usd_ccl, IBITC). 1 BTC equals 100000000 sats. Currency inputs round the equivalent CEDEAR count to the nearest whole number (half a CEDEAR rounds up) and return the cash adjustment. Currencies value CEDEARs using each trading variant."
+  },
+  "toolDescriptionGlobal": {
+    "es": "Convierte desde IBIT, BTC, satoshis (asset sats) o USD (asset usd). 1 BTC equivale a 100000000 sats. USD usa la cotización de IBIT de la API y redondea las cuotas al entero más cercano (media cuota hacia arriba), devolviendo el ajuste de dinero.",
+    "en": "Converts from IBIT, BTC, satoshis (asset sats) or USD (asset usd). 1 BTC equals 100000000 sats. USD uses the IBIT API quote and rounds shares to the nearest whole number (half a share rounds up), returning the cash adjustment."
+  },
+  "toolAmountAr": {
+    "es": "Cantidades no negativas; cero es válido. CEDEAR: solo enteros. Satoshis: solo dígitos, sin comas, puntos ni decimales; máximo 2100000000000000. BTC: punto decimal, hasta 8 decimales y máximo 21000000. IBIT, ARS, USD MEP y USD CCL: coma decimal, hasta 2 decimales y máximo 1000000000000. Sin separadores de miles.",
+    "en": "Non-negative amounts; zero is valid. CEDEAR: whole numbers only. Satoshis: digits only, without commas, dots or decimals; maximum 2100000000000000. BTC: decimal point, up to 8 decimal places and maximum 21000000. IBIT, ARS, USD MEP and USD CCL: decimal comma, up to 2 decimal places and maximum 1000000000000. No thousands separators."
+  },
+  "toolAmountGlobal": {
+    "es": "Cantidades no negativas; cero es válido. IBIT y satoshis: solo enteros, sin separadores. Satoshis: máximo 2100000000000000. BTC: punto decimal, hasta 8 decimales y máximo 21000000. USD: punto decimal, hasta 2 decimales. IBIT y USD: máximo 1000000000000. Sin separadores de miles.",
+    "en": "Non-negative amounts; zero is valid. IBIT and satoshis: whole numbers only, without separators. Satoshis: maximum 2100000000000000. BTC: decimal point, up to 8 decimal places and maximum 21000000. USD: decimal point, up to 2 decimal places. IBIT and USD: maximum 1000000000000. No thousands separators."
+  },
+  "toolCurrencyAr": {
+    "es": "CEDEAR IBIT en ARS, IBITD en USD MEP e IBITC en USD CCL",
+    "en": "IBIT CEDEARs in ARS, IBITD in USD MEP and IBITC in USD CCL"
+  },
+  "toolCurrencyGlobal": {
+    "es": "Cuotas de IBIT en USD, cotización de la API de Finnhub",
+    "en": "IBIT shares in USD, quoted by the Finnhub API"
+  },
+  "pageTitleAr": {
+    "es": "IBIT to BTC — Conversor de CEDEAR, IBIT y Bitcoin",
+    "en": "IBIT to BTC — CEDEAR, IBIT and Bitcoin converter"
+  },
+  "pageTitleGlobal": {
+    "es": "IBIT to BTC — Conversor de IBIT, Bitcoin y USD",
+    "en": "IBIT to BTC — IBIT, Bitcoin and USD converter"
+  },
+  "pageDescriptionAr": {
+    "es": "Convertí CEDEAR de IBIT, cuotas de IBIT, BTC, satoshis, pesos, dólares MEP y dólares CCL. Elegí un origen y calculá sus otras seis equivalencias.",
+    "en": "Convert IBIT CEDEARs, IBIT shares, BTC, satoshis, pesos, MEP dollars and CCL dollars. Choose a source and calculate its other six equivalents."
+  },
+  "pageDescriptionGlobal": {
+    "es": "Convertí cuotas de IBIT, BTC, satoshis y USD. Consultá tu exposición a Bitcoin y tu costo equivalente por BTC con datos del fondo y cotizaciones de API.",
+    "en": "Convert IBIT shares, BTC, satoshis and USD. Check your Bitcoin exposure and equivalent cost per BTC using fund data and API quotes."
+  },
+  "noscriptAr": {
+    "es": "Para convertir CEDEAR, IBIT, BTC y satoshis, activá JavaScript en tu navegador. Los cálculos se realizan en tu dispositivo.",
+    "en": "Enable JavaScript in your browser to convert CEDEARs, IBIT, BTC and satoshis. Calculations run on your device."
+  },
+  "noscriptGlobal": {
+    "es": "Para convertir IBIT, BTC, satoshis y USD, activá JavaScript en tu navegador. Los cálculos se realizan en tu dispositivo.",
+    "en": "Enable JavaScript in your browser to convert IBIT, BTC, satoshis and USD. Calculations run on your device."
+  },
+  "versionGlobal": {
+    "es": "International · English",
+    "en": "International · English"
+  },
+  "versionAr": {
+    "es": "Argentina · Español",
+    "en": "Argentina · Español"
+  },
+  "ratesStale": {
+    "es": "No pudimos confirmar una actualización reciente de algunos datos. Mostramos los últimos disponibles; sus fechas se conservan.",
+    "en": "We could not confirm a recent update for some data. We are showing the latest available values with their original timestamps."
+  }
+}

@@ -1,0 +1,24 @@
+# Copy these rules into the separate main site's netlify.toml.
+# Replace REPLACE-WITH-CONVERTER-SITE with the converter's actual Netlify site name.
+# Keep both Netlify sites in the same team. The child keeps the /ibit-to-btc/ prefix.
+
+[[redirects]]
+  from = "/ibit-to-btc"
+  to = "/ibit-to-btc/"
+  status = 301
+
+[[redirects]]
+  from = "/ibit-to-btc/ar"
+  to = "/ibit-to-btc/ar/"
+  status = 301
+
+# The browser calls VITE_RATES_API_URL on Cloudflare directly.
+# Do not add an API proxy here: it would make public traffic consume Netlify requests again.
+
+[[redirects]]
+  from = "/ibit-to-btc/*"
+  to = "https://REPLACE-WITH-CONVERTER-SITE.netlify.app/ibit-to-btc/:splat"
+  status = 200
+  force = true
+
+# Add other project prefixes here, before any catch-all rule for the main site.

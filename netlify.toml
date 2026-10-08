@@ -1,0 +1,21 @@
+[build]
+  command = "npm run verify"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Redirects are generated in dist/_redirects; CSP and caching in dist/_headers.
+# Both use APP_BASE_PATH and the public gateway URL during the build.

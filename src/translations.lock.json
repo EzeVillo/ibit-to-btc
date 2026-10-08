@@ -1,0 +1,770 @@
+{
+  "home": {
+    "es": "ce32669bc27455ad7b9d1e83987026c78f3733fa33bd642225003268e7f03e7c",
+    "en": "a19c5ae4f84d18de0f9f169a59345cbe836c8e5aac738394b249e725880374f8"
+  },
+  "version": {
+    "es": "ed568a9259b6a0cefe6021aad507c955d05481feab6b58d6490db9f8116299d8",
+    "en": "f0ad234172fbb9f82ca6554bf14a86134759b196ba0daade612c4f7d41f5c2a8"
+  },
+  "theme": {
+    "es": "d5df3708bc688543b1a2bb9f4c78b164b99d5e484d7caebd4a901578aa2b378f",
+    "en": "efb52e7172b77731d996ff4f51cd7b3dcfd55fc6f07392994619418d58d170dd"
+  },
+  "themeLabel": {
+    "es": "5090a79f1a428154eb02fc62f02e5d3cbd8e15d31c5b0a2167e5922d12374b34",
+    "en": "e230a4dbad8a7835a8cf0b5bcd40c63b20a25f36c457b72f11795b22bfa1906d"
+  },
+  "system": {
+    "es": "f150afd3c5994d185052d4165729e1db8eae6914164b9471c3e583edfb1db020",
+    "en": "6725e7bbcd28f3a8a586fa34bf191fd72dde8b61756932cd3237c17a6f196f1a"
+  },
+  "light": {
+    "es": "2f3e8dcc246498504bc7fef416082aebd9869d8c360432e5a443b28dc304067f",
+    "en": "dbcd5e7bb7a0f538810de44c3efbd813037ee3fa358747bb71fa58e157af45f7"
+  },
+  "dark": {
+    "es": "1b1c27c397aee60cfa874aa6a2a1629439b41d214d70aaa6a67f8c1f439d3398",
+    "en": "60acc53f13a5d1bf115878c4a785e9a43e8286c4139a8402a6ac7d23966f9153"
+  },
+  "eyebrow": {
+    "es": "707034efcd4c678fd1b493047d73d04ee5fb3f76e3aadbddd7fce1bb9ba998e4",
+    "en": "f646548d6f305f364f17ec50a57455d758e77678959ba48fb5e28e14adbe1355"
+  },
+  "title": {
+    "es": "7b5b3291c773e0e74bac708507121a29838b0de8d82d9607b051219d6aebcf1b",
+    "en": "bcb2c0de42496357da75c19d5ec83843297a5de6e3e5be40e66a336fcfb5be12"
+  },
+  "intro": {
+    "es": "fa0455f0a0624d09498fe66bc63d6abfc883a061e6cba8fe703c07240fb5039e",
+    "en": "53a31a39ced02c1fd3046f7508cfe18463ac3257f1a25bd2de8c57703307c674"
+  },
+  "converterAr": {
+    "es": "9a86c84c938efc79cbd0df4bb3861f1d1e93f7cf5031eff57e243cbc40c340d6",
+    "en": "1d61f1481c54d155f02c678e066de09e235ea759971ef0c054637716d01a830b"
+  },
+  "converterGlobal": {
+    "es": "247fc8e84469aee89bdfb1e2847f285bc7206ac5c0f3be2fcf069637448ff50d",
+    "en": "216d25e693bdce3db3a5c32d7793e1d42b45ccadd025e68b5f924b3e8fb928ef"
+  },
+  "convertFrom": {
+    "es": "a4cbbd24441d5405a4006df4e352169e7ab2509c47b5454a0cb7dd2050a1a66e",
+    "en": "d0dbad92b48e19af0b9cb6c88d42fe8d6cb88c0707fef5f2ce05f2b34956e38e"
+  },
+  "quantity": {
+    "es": "785022e063fb578a7a92c093bf4f91c010b0748b6b20c9d624a2ed4a744a71cb",
+    "en": "7fabd5371c7ecf41bf110702940f59e104d599c0e110ee77f82770b3d4126075"
+  },
+  "moneyAmount": {
+    "es": "19b530819aa22e93a6af17473d1732fa363a55db2c9ca0117bf6e74011de89d3",
+    "en": "70c307afd918b87517a2937f88f7471717b1fd12403a9ab9dfa8cb329c1878f4"
+  },
+  "equivalences": {
+    "es": "55ad10aa27caaf4ef1fac03fa46596566afa3b0f9ad89a477b4fbabbffc5a035",
+    "en": "f363b8ddd7be47e6e224dab4ea5c229c46063196ab201678cab8526f463136f1"
+  },
+  "moneyEquivalences": {
+    "es": "0518f002e1119bf9ece7af641bfaba9c1f50a569770cdf06044b3555f13d4867",
+    "en": "5c9b365fd78b4c3d8c16824fa9c16f0ab471875b07f5171dc31feb4a5707a3d5"
+  },
+  "clear": {
+    "es": "08df229fa5adc7fa78dba280554f80cce14d83c36d0a32a87d38879913733575",
+    "en": "83b12c2216efb4fdc924e1deb5182e905e4926ed0c1c324d467107f46d5a26a9"
+  },
+  "automatic": {
+    "es": "0328fe57bb4dfc05e7699d5a2f6693542e4675e4e8c13761ae18bfefcd320770",
+    "en": "027903eed53b9d8c9c8c2415bf3faf037181929abba64732a0cd14c6d393430a"
+  },
+  "useSource": {
+    "es": "e349141b8515735e2fa55cae1a085d2d5b33fc01e0a1723a0c15df628e762840",
+    "en": "49fa5ed027a9cde99445e0a177396fc203465715315a8760aad727458b135954"
+  },
+  "convertAsset": {
+    "es": "7aa9b997ac52fdc1ff5f0e2829843040918d42379f24b0a41ec22bcce98f2bc9",
+    "en": "68ce59318ed72d0b05e76c815e28f8373ce018a2d35fe2b7287b9a31120e8572"
+  },
+  "approximately": {
+    "es": "95689a1cffae61d6fd6e2e38044de78181636478025a6a7c80a02631a483490d",
+    "en": "5f79c870f2acef18067bf94da6f1f545c54981ce5e3e8f00fd1aabe17524783a"
+  },
+  "noQuote": {
+    "es": "ac152279f67fa521ed181168428cbf2f85643b0c6a4084cf02e22d0e7529952f",
+    "en": "8de5ee1cc8b372f3c2afee2426f88eb1710fbd8500d68395223cdf6eb20f8d74"
+  },
+  "notAvailable": {
+    "es": "75f891b237f5289160368d48b9ee2c457e521539001224670cf8542cc196a8cc",
+    "en": "aee39e1813ee0a8eb3d0f9b32481bde251a26590177417cbc7cf62f8afdd9ed9"
+  },
+  "loading": {
+    "es": "93326a253abf7284e6c2d57871c0b3d5685cf559adb3ec27da4f3ae25a2dcf76",
+    "en": "1fa2adc0cdbb8901d60cafe5812d401ad20fe40919033725a1cb9f8d146df5a4"
+  },
+  "refresh": {
+    "es": "fe5f6628c7b56bf16ad01e4d0b033ac28a15c0f78d26b42118790c6396dc2b68",
+    "en": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+  },
+  "refreshLabel": {
+    "es": "0a004746e32ed41098c13e3a551a532571a692130925fccd21b31cfd58c47765",
+    "en": "b8be9cb5db1a71cdb012310a7bfc86ceae7bc149283b514732d1f594c6885b9f"
+  },
+  "sourceData": {
+    "es": "e4248adcbd7454ed9349e127225bf94a9dc9b534d134a6225c7c2e65eb4c67dd",
+    "en": "9197a693b44441b046f0d4728ef23a37446810629e16c3d1f0ba61dbb6b786d9"
+  },
+  "emptyResults": {
+    "es": "091d02c5f70399a93ecc0d42843b3bee82936ceceb35efff36ae34902dfbd728",
+    "en": "ee404e5b29e68b9d8c78aa2cfef887bbfd181db6d9a17cb11cb5e15abf767910"
+  },
+  "reference": {
+    "es": "920fd600ba4560e581dd98a16a5f167affae75e8ced96f16165a671d51542172",
+    "en": "ebb6b0f2967cc2073a96ee92053ba9a8f2c18f758b173c77c929f153a9ff3b37"
+  },
+  "currencyNoteAr": {
+    "es": "1cf4bb6526ed300f4d8f5a1472dfc4e066bda8966c8e31323875c6686c260d33",
+    "en": "544512571f9578cc67760edd09c018a08ad0b2776bdb0482dfd0de5c9604dfd3"
+  },
+  "currencyNoteGlobal": {
+    "es": "31fe9dc10eec0b8cb81d5cc47c579be41c668cd5e3403007ab89b8c83eb56d51",
+    "en": "78df36035e6cd11b6d83addff42d53b06a783ee524b0b806ae2badde3c36acd6"
+  },
+  "fractionalCedear": {
+    "es": "205dde6b349c10f717d0a5e9871a522e0605183cecaeee9d1a3badbf2a274487",
+    "en": "823e33c9277aec6151e923d04a2fa30051317013322bd6da491158e4226b1390"
+  },
+  "fractionalIbit": {
+    "es": "4918a45853d5dcdd3498ffd5c51a2e9649bb6b6f591201844f5b2f9931c68906",
+    "en": "d6d25e805e1f0ffbcc97ee2247f1aa6d6175e23165a707fa69bac3fe50e9bdc6"
+  },
+  "privacy": {
+    "es": "57c3cbf6f616accf6bc61738c940e57715a834e9aefdfa2845d4766430da1ab1",
+    "en": "8ba01244fbc0c185b575765d19a2c2291da03745ac8883c77a4be71a0f2d3e29"
+  },
+  "cedearSubtitle": {
+    "es": "ce53cad04a5d295ed6db22d2bf3cd767db6fdaaa0c4a54e6776bae2d774e938d",
+    "en": "da0e9a69dcf3a28459d94ee855f579da4c5edab56323bd4609e3c5e18519b3cb"
+  },
+  "ibitSubtitle": {
+    "es": "c500e34272e2f1e9f687e7de44d48442c8f2481cef3e0ff58ecf17f0e7100653",
+    "en": "c4bf31d901779ef211b8bbc11902aead0e9a702420fd878be3522f5fced5075b"
+  },
+  "satsSubtitle": {
+    "es": "b0017f64968ba42c7812c0d935d8d9626acf81bdbdd3f48e4435a9bd005b15a7",
+    "en": "9ee95317954f93fd2947c373a6ec5e8ca45a80e9a8b365e03bf434239073f93a"
+  },
+  "usdSubtitle": {
+    "es": "74d86bf5532102744e2d61e6d43ef249cce820f4f5ec527024244e10f9a33992",
+    "en": "5026e8b313578e754a65f5a27ac8538cd81f91c29c0b858b7ae0204b1694ce10"
+  },
+  "cedearInput": {
+    "es": "9ea81dec9fae27abea07ee7b5c842403d3e2e70ce62d64e617c94309df1337e3",
+    "en": "8d2ac1d4d35b741244261783dd3358c3fd5e9fd8ede93915f21b3182d8bb4e0d"
+  },
+  "ibitInput": {
+    "es": "a7fe3d56b723e11f6a025e970c272336711105abb00b88067b4145d006a7a455",
+    "en": "e7465f5c4280462473f76ad0cf0e121d44cf1ff7d0014e39cfa90915474a2bf4"
+  },
+  "btcInput": {
+    "es": "e47761fb995c4b4a0893f5299f02f09c21d3f11af88be1173dfe8baaeaf03165",
+    "en": "98a3e3beadc0c3bfa395d53a5ffd3c55fe9ed57e1aac855c9009fa864cde8ad9"
+  },
+  "satsInput": {
+    "es": "92231d1c52ae1012036e52587ae2503b41c7e33214e447b90c47104a54bf821b",
+    "en": "ab5ccf31fa35d48f55b19cd90fe2f4ce21cbf18fbe13602f9649ba49a7693a03"
+  },
+  "usdInput": {
+    "es": "ecdf53d0e791a34ba228ff555696f74133ae8972824085a5fa9dffb03472e1d8",
+    "en": "ba7148800d9ce17da3957e1abb36f5753656988eec7f337a63070cb75f2e0418"
+  },
+  "mepInput": {
+    "es": "b0eb4b2892a823b4607c3d25e60e685e02947190bcd666c79c83b84e17805b6d",
+    "en": "161168be1a32211621d68d6aaa1db7cf587f1e6bb490e0ed894fc2a8c2b49825"
+  },
+  "cclInput": {
+    "es": "0f22a880ed9ab3c06c2d33422a9d7b5012525ce9a6b63fd999e54c6a5420a0d6",
+    "en": "d598096f4e5e84acc6cd4101ccee72b4df194232e3bb9d20c7d2e73ad8d487ad"
+  },
+  "arsInput": {
+    "es": "c194936f041f14f04d3db4112b6cda64069572b76f82e4e23739b7e89936437d",
+    "en": "cc250c484c9402608cf49e3a4dfb2df8a0c0a00d5e4f2c8f71c8d4e969b878c9"
+  },
+  "cedearExplanation": {
+    "es": "d07a71a81a3f0d24038db0b3f094fb3855fa5612d1dec9fe20a8ec8c206eb4b2",
+    "en": "c7aa055e38f5d90bfc005b450202b705a5d2b07fcfa58cc4178e124081c59471"
+  },
+  "cedearRatioExplanation": {
+    "es": "14319a8490761f3956732911d2cd7a52aa34f255602cffc97d422fc74a8ce978",
+    "en": "c663c781c7fc4012ca7924d9eb60817664eaac8c512a47df9d47126d99338fce"
+  },
+  "ibitExplanation": {
+    "es": "4cf076394c3ad63b0a879a782a737d931d7603a213ec0063f16ab395265aa701",
+    "en": "2e93adb6cb35818e5e7510b2cdce05e9cb86fd3080a293a8d08f0832795a5c44"
+  },
+  "btcExplanationAr": {
+    "es": "16b721bb07b3c22937aa7dcfebfc87aadc65b62f1150d091eede8bcd888feb2e",
+    "en": "61b68b8901009818b683711378cbb44d499dd2be80052108422eb1f364645e45"
+  },
+  "btcExplanationGlobal": {
+    "es": "dc39c4c90872cf1ea7cdbf8672493b65bfdd459729a6da647fbd3b3a9ddb698f",
+    "en": "be5cc2edb7b253a9daf7e9e727529641d6e751083bc90cd9fadea774697115a0"
+  },
+  "satsExplanationAr": {
+    "es": "501ee7538f76a38930efce6350980910220758e4347495a6a040c56ecaee7760",
+    "en": "91d0dc4559d81cfa2686cbf5a71296ff3b1e826f28c637f72ad22c297bdc4225"
+  },
+  "satsExplanationGlobal": {
+    "es": "b7c08f845865ec5cc128178b2e7c918d889ed41650ebdeff52f815a8b2568eab",
+    "en": "f9c8e7fe3611dd03e2d73c3e46d0a59b2940853c5c9a632b72fa2a06f599bee5"
+  },
+  "mepExplanation": {
+    "es": "f9154cfb8ccb17c3368df535758d16bcc8eb599f6b67f60abe0a99653bc84c64",
+    "en": "acc66a94641d2abc25d034cd810943927068d9b5b66035a9f3dd004361f2e9a9"
+  },
+  "cclExplanation": {
+    "es": "93586e9d05a6d7f8090bbf51bc3e8290c04309e1356c8f4b5d9393fcb45bc052",
+    "en": "f8dddeb0a8d7353fb1f29bb6756fa3a4c885f1579f10ac16df418aef67ee2b86"
+  },
+  "arsExplanation": {
+    "es": "27c18f823c132864a7459956efdfdeeaf6d89a1d256fe3c81a93f56aca63863c",
+    "en": "4e4f837cd390902a3ff7f29a0d54211ee09628c865ce5ec4b902c0dc6ef20b53"
+  },
+  "usdExplanation": {
+    "es": "02c057c0996a94aad94bd88a23290db893313eccc89b7cccb49102365f91230c",
+    "en": "cfc035f5761a218c51a887dc7b3a41e5425391d7444fd38cd95e7a2352144050"
+  },
+  "methodTitle": {
+    "es": "bc4ef9e55065e0ea50f27a195f3876432f21f239b2dc8a54f5b016e7d7bcb91d",
+    "en": "0a51de4b00dfb2bb033c227a7473b3e8aace0620c2a5623571fe3d6c190e5f9a"
+  },
+  "cedearMethodTitle": {
+    "es": "19889ec1b676463f95985f504b5f463530272d0e2ea1a44bc5a4205bca230fe4",
+    "en": "f7770871d341da710f3c256374e7d2a79064b40649083750df5eae262e398d64"
+  },
+  "cedearMethod": {
+    "es": "009177ec707244e03476048f20e9e8aaa171dbbc7cace5ef1212b5669a44d84d",
+    "en": "54ec2e1aefa42494ffbe071736d6314f81d05d3df1ab307c2dbe28d43cfc408c"
+  },
+  "cedearMethodLoaded": {
+    "es": "1f47a7336b06b3ea4a1bbfe94d7af7d72e80b29863d75e0338e30947307c45e9",
+    "en": "94be0dd99c615b8ebf909831e96e82ae6765bd5df7743be00ee40c782d101f4b"
+  },
+  "comafiLink": {
+    "es": "56c162d4d10b6d62fd81ccfd5659c2e2222d28d45d5adfea46fb0fa3434ee2d2",
+    "en": "e9d0aeee0a4f49decf4b31fb9809065c882e6b52b5d6b2f08d6a8d0c4ae01c74"
+  },
+  "btcMethodTitle": {
+    "es": "81ff13adc113228885a895436a73d6eeda39d793ca78f9f08f6c77ebd93381c4",
+    "en": "45db6d1ff30f6939291e0564405e92662f5c00c501a18d7097bf915da00b71c7"
+  },
+  "btcMethod": {
+    "es": "fdc621221f7f6f15273132e45f01824dae6d5f6641916222d20afee421a4ecd8",
+    "en": "59e32877ac83bcbab32e23473ca86d9a465b111cf985f418c8f8634ddd040062"
+  },
+  "btcMethodLoaded": {
+    "es": "43aab38d3acc8c513f414d8318870db22f79f4cd0b53539bc6652d9241584852",
+    "en": "84f90c0893d684c118eb6e639659dbc085ceb92567debb1d2bf573af14c26d7b"
+  },
+  "fundTrading": {
+    "es": "073645b01f0dbc52d12d74d698b5810f715d0feff95940e38cfea66ab7f49c6c",
+    "en": "1e2cba4e06702112616e12fff2e0466ed09c1cdcd5961b4a97699eb3fc63c624"
+  },
+  "fundFees": {
+    "es": "ed79b846116ea541de09a4ae6204c366d8a29bc3e5ceafbba5b5959cc8a9409e",
+    "en": "51cc83021e323e51017cfe8efd16186611d6196ecaaa66bd14518ede2730fd4f"
+  },
+  "cedearFees": {
+    "es": "05fe31c3c1511b942e656d6caf753757c3074e35715246fdce91bbffc6404448",
+    "en": "2de3c7a4421a5ef7ea06f7d9ddb51a0bfeb286d81e43e2c6606a0ba603d30fc0"
+  },
+  "isharesLink": {
+    "es": "375029c9c870dbac68e61d2dfddc180540a26e980d3da7a427fb8215cdf913f0",
+    "en": "149ed1279d83ec124ad0e51b0604fa1f0a69d9bbaef222cf7938d2559226869b"
+  },
+  "satsMethodTitle": {
+    "es": "cd8206124c63b34ac2d2c0534893f061dbd2c1b846186f6f822eb8bab667a9df",
+    "en": "d07b41bd0f7a6d7d82ed60778f847912417647d582f5da36a8b569262394fa64"
+  },
+  "satsMethod": {
+    "es": "32ca242b31f6f886fcdf2708e3d9c4044bd639f2f473f9eabc86276825b8f908",
+    "en": "2acdc961d9980e66b14ec353a94f6397702dad0f8113ae8929ea2e73857d4d4c"
+  },
+  "moneyMethodTitleAr": {
+    "es": "2f130739542306d7379321d7fd9943e879d49767e132c3c2f340858a1d5a6a94",
+    "en": "ae6edd92744584bf09623a6ca4bfe7d2aa43929722c370b74274780741155d79"
+  },
+  "moneyMethodTitleGlobal": {
+    "es": "2d176bd4e50ec1e4288bc0a46ccbca5ad73c98c1c02f7dd5beaddea6c272145c",
+    "en": "8501209afc0ef068838bbdde9a53641ab1ad3061814f102ae7f2ae0bcb4cc366"
+  },
+  "moneyMethodAr": {
+    "es": "11d27a164203e693d93fc208f9eba9a4cbd9159dab61cd45b797f3edf3ac1c7c",
+    "en": "e95238960ad65a1b67315e50b7dfa2b511a1a68a701731ce2c5a5761e4c046e7"
+  },
+  "moneyMethodGlobal": {
+    "es": "baea5fc7b7337bf1e9fc7c0de3f0fda8cf58dbdc363a88936266454b84c51752",
+    "en": "195ef28763b0e7b00843a617b387bddc1bd54c15d548e72c6931b3c3c2271710"
+  },
+  "marketLoading": {
+    "es": "eda7c349681b8adce27e8c50096f03476ee82ac711f1e2a7a20098abccc25d3f",
+    "en": "3b4e3a1a807de1e824ffbc2aeaa5314c6a051568a2538e95f160c105ae17a25d"
+  },
+  "providerLink": {
+    "es": "cb335f910c58270d49579ceb64e5fb49284e73019846200225b329d939c795f1",
+    "en": "0f1d35bce5245d0f3a3cca95314c5a7fb02dc8d7fef4b70cd92231c863b54f30"
+  },
+  "data912Detail": {
+    "es": "3ec05d97f2ec9d3badfffc2e9f6974e61772cff9ba6c37b5898308cb0f22c26a",
+    "en": "cec98caa643408afe9b98cc5bbfcceaba614a7d84febb2963c16809cc10645e0"
+  },
+  "globalQuoteDetail": {
+    "es": "b7fd87c3f3b3ab09ddb88fbe980b1510c4726b81b8d32d9db9e9412e0c92dc3a",
+    "en": "ba63d16c042ec603b8dc0f5e714d4f30ed7e408734687eba39f00fb6db4f2ab7"
+  },
+  "globalQuoteUnavailable": {
+    "es": "0551d72cfccd45927e560562d7f2558866fef832f7acc121ecab86bcd33aa939",
+    "en": "160eacd7d4c25be05b93e8a800655827aea4c16befb3d9fe3ca78c0c2ee4d7db"
+  },
+  "costTitle": {
+    "es": "ddab4f69a912c9f64c6dcf2c34fa7c486fc0060312ae30018bdd3f459feba066",
+    "en": "1e856057e6f6be61b70a4fb78d9b1550aded5f3513336116ac7521d02e2ccd5a"
+  },
+  "costIntro": {
+    "es": "75201eedfb2ab9645787d89678227281414717857c293237e592b8e281e29231",
+    "en": "0b5c445866c6213a01452a34738acda46cd87839c95bb09c2d1bb00cb68b0e66"
+  },
+  "costCurrency": {
+    "es": "45e8051ef7b0ac21b8facb9f8cb362d35a92f9a57b19b814a0746ccb39205f4f",
+    "en": "6cba777b42fb03cf4e597610247234158a2e306671f325eb40d15eccd55b98b6"
+  },
+  "mepCurrency": {
+    "es": "4c893b3c4c9cf47a8267aa9ceb88fdf7c29a1aa920db1c78f595eba3f15d2a6d",
+    "en": "cee175be28bd9e43cf038645294d7d5bfd4e2ec07e87c2f430c9305042136c2b"
+  },
+  "cclCurrency": {
+    "es": "7ae93f40b63be2f82a7844cad9aeee6ae064a95b5b98cb80994ccbd22d2318fd",
+    "en": "2291d82268aa420d0bb0c0bf508b6cf609963aa0e4b76a445d43bb7936f6be10"
+  },
+  "usdCurrency": {
+    "es": "6762d56e97ba60918858d94b99e8d4e2bbf7b78ca560aea8d985073d7c694aa2",
+    "en": "df2534f0d186ad863c196004ed912627795578fab383badef157ca8ef09a9ec8"
+  },
+  "ibitUnit": {
+    "es": "e8e587e0d5af9dbccfde0f142c040a899773c228e09ec8936a43ac573035c629",
+    "en": "451ade98496b1cc6d22cc547cd7942c5d0dc22a9855d6c599a352818dd200f32"
+  },
+  "costPrice": {
+    "es": "fae6da15d3367bf28cd0b815ec1576415c420496e5a25f92ef26bc23927e1f81",
+    "en": "c206f2f6221ea91a1cd9046a290edafbad49b393fed8eb8f1149e01f7299a03e"
+  },
+  "costExample": {
+    "es": "25ea38e01c78a3c2d3e1c13a897fc77b27313f9a0d030c564906ed7375d85a84",
+    "en": "50ea76be4696374084104e5b66979d82beccd8d1e238aa6cfde9f6b35185e9d7"
+  },
+  "costHelpAr": {
+    "es": "82b87774e9a7af2342b43eca2df64e407b1ec8201f69e2d9794b10d38b28deab",
+    "en": "fb461ad07ca018602e2572ea1cf1d6be591cff1c17b3430e0522a697ef78360b"
+  },
+  "costHelpGlobal": {
+    "es": "e4049843c9c1193e9d3cc209211bbe6c856e42022fa36967d269702e4cc5c672",
+    "en": "cfb044d0b6393b9c44327c80317766965d66bd0246ba9dbc5fb8c04defa4752b"
+  },
+  "costPerBtc": {
+    "es": "1ec72b4061a89cbf5f47a3b85e63c6a23613a9a2a2ee751f0f4f23f7a8cfd783",
+    "en": "abe6096298c65bf7c2689f8c7f54d83708b639503137f22d03f633685295ad3f"
+  },
+  "costResultUnit": {
+    "es": "51a703cfc26577d0cb969bbdc98da269dd2691fa0e8df8a9154a243561766fe3",
+    "en": "f15a5a9f9ef13f7c30dfe613215274a879875186389a3358291853bcf8cab2eb"
+  },
+  "costEnter": {
+    "es": "293361ba37a54afeef30c3464febaf473c0da82d6bef60acf298216dae43ee18",
+    "en": "4f79fa355828aeb6d15050926f80f35ed09fa715a56189aa9d3c2ea5f0aed6ab"
+  },
+  "costCorrect": {
+    "es": "41085d6e6a55b14d81682d2fbfd0cb17551ec0ea79b57131e200118b6af64e19",
+    "en": "ac298b0ad222ad01ebdd75fb436e06453c91b17c3d002ef34343fb859999a46c"
+  },
+  "costWait": {
+    "es": "786c9093920dd9a51d59361a846419bcd58926fea8d68c9a8c90b9ceed8e2ae3",
+    "en": "6630b6d6df036fd89615e066f59590a45f42355d8ecc4b761f47e2ca23123daf"
+  },
+  "costCalculated": {
+    "es": "2821d6eaf505ad1723be00096bb341d7debfa1c180a13fe2e3bd0cb0b432e271",
+    "en": "6485718c577e55a5ca00d665fe27ccd633786069b904c5c99cd0b658c92cb85a"
+  },
+  "costAdjustment": {
+    "es": "0a7c057c51be7f374d71b6d0ba0e099563cad5a4e6f5ec0f4d32339bd40c6c24",
+    "en": "8e16dd1eaf363bfff26937b1ab1fb06068c27fba6a843ef6822cede942521a32"
+  },
+  "costAnnouncement": {
+    "es": "2325c2abf894c2ac70321f86f66979437d434f98584b9fbecb4837273205bb58",
+    "en": "bfbdf2c998bef813e03783499941a6fc951a48f5b29120cadc0b49ad7510991a"
+  },
+  "costAnnouncementEmpty": {
+    "es": "e20985736fa3f813b82d5725d24db0b91d0ccf3529e212a486a65062887f3b80",
+    "en": "0bce8425edc0724b9fd394eba9837506936be8a4cb9670fb51d241cdf4ae4fb5"
+  },
+  "costMethodAr": {
+    "es": "1a19db531b6b51107dd644b85b417e058f2fe414fcb755f5b81b624b34afb031",
+    "en": "2427c095f56ab8632ae455356cdf44ed0a62e46645b38a635851b16baf81be8a"
+  },
+  "costMethodGlobal": {
+    "es": "f2c88b767a10560b42cc7f9072fe493f81f6b9560b6cd8360c854fbc335d213d",
+    "en": "9afbba55df18a691215395544ba8d22d67c21a35bf5745c5ffd199314a8c3a43"
+  },
+  "costFeesAr": {
+    "es": "fab7348782c78d673135710e1e9c35ccfa6d67af64605a8aa03897cebceeec36",
+    "en": "80727ad122d6b8ad8619fac82980eeade619bf547f5d79f715143bcf5a88c0bb"
+  },
+  "costFeesGlobal": {
+    "es": "7baac6ca1100e033c36e23329bf2e4073ba0f3e6ac6cc321101b177335ef4ca9",
+    "en": "7a6ca42788013f3d5e63b1990fdde0dd64886bc44fa8e0b5d0bfd106fc47e11c"
+  },
+  "costHistory": {
+    "es": "23aa967dcf235b3d9191ff30af69579258dfdffaa66071a1bab4b8d363c4172c",
+    "en": "14bcb5ca16f248d094f2b1d969cb0a2009d22d6f43721167f0144a6198294fef"
+  },
+  "costIndependent": {
+    "es": "a9e055a022f0c559b549ac68dcfd71e01f46416cecce78e1a92a8e54709edbb4",
+    "en": "38ec803bc595e204528548f8c5a732abd2866a5e7f7071b4cf114806b0a23af1"
+  },
+  "costReferenceAr": {
+    "es": "67831993b5b51becfc613ccccf96e6fb621382f5ecbcacfe7eb0fc8e825166dd",
+    "en": "c8d5204c4cd7913dc6ce2c11c344e17ab55b17b17b28878ad18870768f9fca99"
+  },
+  "costReferenceGlobal": {
+    "es": "6c0c556c81431044bf8557e7b0d7bb7f4bddcdd6422120845c38b7d579a5d1f4",
+    "en": "c2350caf1eeaf58e6295cc711643a47236fd17ada55d1343930a04039b95382d"
+  },
+  "disclaimer": {
+    "es": "2b03bb7105fb4385c66d5758a00416eafcaac9a24c66fea6d668555d7c8998f8",
+    "en": "7c491db3e767fbd7fcfbbb08cfb999cbc75e5461f4eeee6c3cb0e81aba4f732f"
+  },
+  "roundingUnits": {
+    "es": "9e1741f9a5f4ba4847026a196c33b26d0cc06695466c0cd8d8ce3f604793d828",
+    "en": "c52b4ea86897170584ae747c4a74f15df2fcfd898b65bbbe095457947677461d"
+  },
+  "wholeOne": {
+    "es": "7b3f064b9cf405d51095ac4a52863c21ad2c9428ecd1e3b29495c3be3126b5c7",
+    "en": "385cfdbc00ec32031699460779c15099b2bba3cad0e440fffb08e10df0acb9e1"
+  },
+  "wholeMany": {
+    "es": "e4bce872568fa38cddabbe7e334676efa8b72b63783363478eb20a6a44c5fcdd",
+    "en": "c981a30c0e7b420b0ba50ce7d1d4174a511fdf20567b852ab02c774cb9a3591e"
+  },
+  "needed": {
+    "es": "3b1160a197a2577903c49cbef3e47d6a0237fab0498146707de07c8bd7476cc2",
+    "en": "60d076d62081fe2bc37aa52e1d54ffec947217cf0ac7c8ab0402d45782f5c950"
+  },
+  "leftover": {
+    "es": "5950d5b33b203aa6878158c48eb781ba9a00e374f6e6d4ae6fa2b43bd7440cd7",
+    "en": "606dd3d1ff3f9a5dddc2dd0c281971ae6658e98a80cb3464dae9c2e91d86945b"
+  },
+  "roundingValue": {
+    "es": "6d06e7e8521c7515ccdac2c72a76b5e08885223f8a353890a20326860b46e827",
+    "en": "18ef327bdc6b6be7702b86ce8f1a929273c2c1dbf1a5d7378eb6bc0f1a2209a9"
+  },
+  "roundBtc": {
+    "es": "61706769c85df2f21b2759d26d2b447d169d6560acd8a473b54bf64e9124061d",
+    "en": "dcad46343d9b15e73481d075c7088ba2e986a29ce4c338778affcfa51d81b725"
+  },
+  "roundBtcHelp": {
+    "es": "11e167e547aba344fdaf0018eb0728c651f798eeb0e0eb3bfc44072fbcb54189",
+    "en": "e5039e524cfe109dae26567e30e5714b1dc5a381e9c58cc703e683606f04cbfe"
+  },
+  "roundSats": {
+    "es": "ce8f29edb0af22f94e483843357e7f61f7cd878074c6a883141c01981c138a1a",
+    "en": "6844d2ab5f43c4565d30567a07f96cbc2367b7426159aab24f73cdefe0668f7c"
+  },
+  "roundSatsHelp": {
+    "es": "d1104f2164dfb44f73294884ba119cf8c1209d272b1137c85943b2cc54b72fe3",
+    "en": "ba191c2f8c448991380531cb424003fad9caa0fcdce0ecc9575fd5bcc762a7dc"
+  },
+  "previousEquivalent": {
+    "es": "4b0d11e934ebd2f636cc4a244dc13bc6fe19278bf832c644261c4536ceec138a",
+    "en": "9e94c58c28fdc7ab0e125e0fb38066b0254e656cb32c144216c8d2e7c6c2cf75"
+  },
+  "roundWhole": {
+    "es": "fbfedd9603b30c60d7aead00b22cac771f6312878ae584a5b2d6b04c8d3954a7",
+    "en": "c03eb5ac55a1cb722582b15b8ecd59b1810eeaab4022bf766f26b6286d7ae57c"
+  },
+  "roundWholeHelp": {
+    "es": "0754ba9f6206d206c3470767181adfc76b4fcac2806ab9994f3e4700deb89968",
+    "en": "f3d90a759434ed092c51f6bc4a0036d0269ac55206a37880ca1016450e9a4227"
+  },
+  "statusAr": {
+    "es": "f89e0adea956336c544de1ac2cf807017c7d6404ae33e566d0f77783e8353a6f",
+    "en": "78ee5acc1cd6a656d00887609b47f67e4adf54b76176c141d52e36f9ae5f0984"
+  },
+  "statusGlobal": {
+    "es": "b6a152f299df372b5c33e26881adb6c2a6e75ab92cd91291ba94d281c0ee7f09",
+    "en": "0051fa610a8abf64c411b0405c814f28f9e6ce9e7b42b2c57a07d52ed513445e"
+  },
+  "oldReport": {
+    "es": "3bef76729d3686036b7b9c0147a12c5713b1f6222d85cb856c67ab047a849af3",
+    "en": "a5f89b6599048fa23e838f299bf8b8b0771b52a2ed8131d6bdac9f39e68c7971"
+  },
+  "oldQuote": {
+    "es": "6a21a73f66d7113f4e17ba3cdbec91ee5dd5147c399ecd889c0889e3bb4897e8",
+    "en": "e598da232f849e8be8565e4bed0c9cf20afb71dcc5dd1d9a91e216913cef0c69"
+  },
+  "partialQuotes": {
+    "es": "e481163fd644cd6736502e8c6cbe86ca3a50a4a564a7a396049bff89f215dd85",
+    "en": "e46dab048e4133717d91a6c1b38b6327f4d40f2653424ec1c8fb59359dfe3944"
+  },
+  "sourcesFailed": {
+    "es": "2290f9d8253339fae37d36d52ae88a18521b8aedab5106d93c658f7a33bce99a",
+    "en": "62164c282a99ebbea4231febfcd19d934d6d07b371c264f1e2089effe1fdd11d"
+  },
+  "ratesOffline": {
+    "es": "cb69254766a35b908b285121a16f32cb5ebbc0e44496a21df1b4859f9a33a21e",
+    "en": "7bcb7a9c934295629af0e48a21c9e87840d5ec34ed3c45257bfd877ee8de53dc"
+  },
+  "ratesNetwork": {
+    "es": "01d80292b7ce86701248e6edae4ef0c1b05f136517441d53461c8f5cbd165e02",
+    "en": "0badf033cf3aad2f20aa975f69a342b39eb9eb28b65e93aa12cdd90e47b41bfa"
+  },
+  "ratesTimeout": {
+    "es": "66fbc84ada42fb2dbce4c42ea12d40483dda526a8d1d9c96682a8397d9877f94",
+    "en": "269a3004086bc325e815708ff3a3621f87c8e31433501f51f80d690cffeccbc0"
+  },
+  "ratesBackend": {
+    "es": "681018386dfec586a8fe2f1662db10fef45017dc8238adaf32d5e4a73578b49c",
+    "en": "a417361726ecd9d367720655543003b778a9751989d15ed016b3bc5c90d3a2ba"
+  },
+  "ratesInvalid": {
+    "es": "537b8d40eaa82d4f356657b266a0645d04e0e92d771c5cee4c71191b1527f231",
+    "en": "127235e500a60539833dc36a65d3fe6cf3194491005dd5f308dc302037863a50"
+  },
+  "sourceQuoteUnavailable": {
+    "es": "c764c7239bc1333c50c720e0bb1f6e4a554dd802c01dbfad4af9cf16ca13134d",
+    "en": "0a14f079619ff38aaf0caf652e75c0335753d1b7762eed7a745edb4b8f44b2e1"
+  },
+  "sourceQuoteWait": {
+    "es": "300cb02c7670e79d0d417b0cd2be19a5858f32a09c970e07b3360ff8378267fc",
+    "en": "e770366789d5eed33a744feadc2b7b326cc8d699226df09157b989d05e991b8a"
+  },
+  "refreshFailed": {
+    "es": "26034d2fb23cd54c7bfb4a5505f936ae01395874988aced04ad0aab6f4bd8e7a",
+    "en": "e709f13f52ded4cdf3b096ddafcd53125ff6b35f50a6d037a93c4ae3d8a5c0d7"
+  },
+  "retry": {
+    "es": "b9e864d573e488990b88e3f057992354bb59087d2814bdcd1a3186e1c19f1e50",
+    "en": "62ad503ede5195a4bdb04b129f4056e3dc6df9d69cbb0eee76f39c428eb232be"
+  },
+  "retryWithData": {
+    "es": "b6ab519118cc0b1afbb5599997d2b1ddc4f2da89cfd5d7085debc446efda23af",
+    "en": "0e2cd9c6dae3a92ed35abf79eac0bf4c9dd9a982c4100b5a4e1a450e12152cfa"
+  },
+  "wholeCedearHint": {
+    "es": "4f5a1b0291683c36160e8d10ceb6b3f6b784d393124bccbf76e95254a6efdc1d",
+    "en": "9908dffe6b61ebfd0eb66db56d92dd8a6763a53559f8613ddebb4ce6324e6732"
+  },
+  "wholeIbitHint": {
+    "es": "cf217e00e9d4be16117eb9520a397486e06f3689c28553dd84ae6c74782cc1d4",
+    "en": "bffd89f49f349a43f7dc31574465286632e0a2fd02b052da4c97c84062d2b610"
+  },
+  "satsHint": {
+    "es": "b4740503277f681c9eb39c4b83394d14bb549552ab0bb03ba27268d88efa6403",
+    "en": "0ebd5c2b5f67f4dc9b11d3b7df45ee1f4e1130d2b7f4cb5f3a653f416d02542e"
+  },
+  "btcHint": {
+    "es": "149237b76e1578492fe7169cea900103b69861a12f6b698d531a464a50af8262",
+    "en": "c4429c0615326d69ab08faf9b21d4fd36c96e6f81189d365a6b2bb59fb9e44d1"
+  },
+  "commaHint": {
+    "es": "6496e7074727bb096201a259a015dbfe456d13768a10dd2c21376f43a904322c",
+    "en": "c8a5a91ba1fbfa209f60bd55e473ec691b0dc0c9c70eff4bc37b3fdd51ab2805"
+  },
+  "dotHint": {
+    "es": "36427dc80c41550c8c25690a3de1178ced3581713d4f5ade8046e33ee98fa1a0",
+    "en": "da47955ace58065258a17f9b4911b158ec6828597abd109eff51082691a1eed2"
+  },
+  "precisionBtc": {
+    "es": "1be43d76db513a88c589604643f46daa66d713fbcb50d4715737d840b6037ab1",
+    "en": "1a1c1b70246c03d2ac4a274f4de9796b5da6b19cff883926221333cfa6b5939b"
+  },
+  "precisionMoney": {
+    "es": "5c17cd28b3dfbd6607aee7e30180d7c5abd59239eea66914de27b143d7e18e14",
+    "en": "5f6f399e5d9be3bf5dcad0b92714ea6872601b4e26b22fa9378384ef4eea20b5"
+  },
+  "maximumBtc": {
+    "es": "bb261b9a32d48aefd0263242809600ea56859b380413a5cf5428be455104913c",
+    "en": "f90117efa476ff3447e332a79ac8d43ce9640d4caec816e968c73106070a8a3f"
+  },
+  "maximumSats": {
+    "es": "28ac47c2061c0592e1c4a92d8d48d927b4dad0f42aad77cc553a12511cd438cc",
+    "en": "4dbb5cceab3c8e9f772c9f9f9fc509cf51c5e87e83fcc76714bfbd2cd2fb9ee5"
+  },
+  "maximumAmount": {
+    "es": "bc32644e2edaa54638abbfe44f436368c0b64a70b0dd1815f9d2d21e6091486b",
+    "en": "eba1d9054c4a15a9a1159fdb9baddcd8cc7601459f647d3319879b6e85824324"
+  },
+  "invalidAmount": {
+    "es": "aaa9cca034d3f17bb2f86c1269090cf6a29068135fa699fedc015c1383965f37",
+    "en": "475a90edcbc382edbaec6785ffbc9d2da008abd58b4d2dd7d16870d3efdd7c09"
+  },
+  "wholeSats": {
+    "es": "e72dad3e39018b2aaf03c11c272c5d47fd3ee1c986e938adab9e196d9b276e93",
+    "en": "f3bfe7a1a60dfe7cc02dbdd023dd172215cbf18aac868c12ac0c9e17150ed15e"
+  },
+  "quoteMissing": {
+    "es": "d469b6f6007f35c23f92ee64e685c82d57faf6ba58446b60b63f7430f0a05883",
+    "en": "7dbf5b4fd1ae0f6a7126cad03d47cb17d48b7b68fe47bdc85da9c60a1ca3b382"
+  },
+  "unsupportedAsset": {
+    "es": "592653d87f3542ea1c18a365100e9e9dc9cb11667608abc183820975100358bc",
+    "en": "de078ef05a606bd7848debf0a47512b32160fb5e7ca712611aee21c46379bd2a"
+  },
+  "tooLong": {
+    "es": "02f61367b21b4b5f1f3fc3bb4837fcb41a08cf8951f9a8806f87a4cd8b8cc218",
+    "en": "6ad8ba4f10809a5b95a42bb487c4736b1a784bffa47c5f8e88445b12224863e7"
+  },
+  "scientific": {
+    "es": "252e2804ec3e7d48a9601aa66ce5e0a2cf760fd5b31c8767a08b2fc0020d7520",
+    "en": "dbf8fd857144464cf5041ebd23930db8aca37a611968de795f1bb716099b3dab"
+  },
+  "negative": {
+    "es": "9683c7d9cc89245bfb0770287232340e57aec0946e6b6c49220472d15efd3ab4",
+    "en": "5b9101304782e8fb62b65157604ab7c77e379902c9543c206099c8ad4cc771cf"
+  },
+  "spaces": {
+    "es": "ab8a444b7eb92e7299f6ef39cafc709aa32fc754f96a69921d7edeba057ddee4",
+    "en": "2bf1d25d690fb6e24531b7df3f02e2a8f1f7a85bf24fdb5aaabf60d48779437b"
+  },
+  "digits": {
+    "es": "fb20951ab89b72b983824c736af5ec04aedfa7d4d191ea33531abfba2b36e325",
+    "en": "3b52641d53a170e5ea91906b80515dfaff767437070a1ecf8f7a13e67548f873"
+  },
+  "singleDot": {
+    "es": "fac4d0e0ac841d52e96f446add34dfc95afcf7301e1ad0a092f1777ce1e98723",
+    "en": "c89e477708113f0f8a349b5db361353393b3c65035693d5442cece2758152ac7"
+  },
+  "singleComma": {
+    "es": "47b33f44fce5ce9033e0e7a4ed95b3b56fe3e1e617fe1437bc7220c3fcb287d4",
+    "en": "877f03794b825f2d4439501756fca1d3d4439da8359ca83141f79758f96a2667"
+  },
+  "completeDot": {
+    "es": "ab782e1560181d4b6b22b2b78dd614c1382854ec8ae65d5f8a205c24ac004e70",
+    "en": "54e8399d4ac6de2d464c1764833fdd536ab78ee1d663e86429d38477bc0025ed"
+  },
+  "completeComma": {
+    "es": "440fd5c1c0198a1382471437ec3a300156c41632dcadb49b60baef1ce076e072",
+    "en": "27779ef6355ea1377085d99d500a038591e05f6843b41ee2db385d2643b6bbbd"
+  },
+  "pasteEmpty": {
+    "es": "f09ed5a18abfb00303152613cbcaed3ac0d664dea9800092804d9ff126c57262",
+    "en": "a5f345bc6a161421036d238a468d2833cea888906dc238cec075b761301d7be9"
+  },
+  "costCommaHint": {
+    "es": "58351092ae3e2b9e7ecf5ac0b9e6b321c50e255c1a6c9bf1ef9e4e97c1484be1",
+    "en": "e418422428348cb48abb550736bd6bb15e253ae5552fa4b102ed35e5030aa5dc"
+  },
+  "costDotHint": {
+    "es": "52fcd4c1d0b1b38318ae05bbb98b659ebbf23d4910eb6e57eb70ddccc31c613b",
+    "en": "c27e49f0efe86761d1bb88d28b0a0ea16a79a73897bd04a16f6a8babe1efd995"
+  },
+  "costCommaError": {
+    "es": "7f5e720593e315c5eba53059ce4835de529bc9a98123cde57a08192238e65339",
+    "en": "7a15504d267f025f5a03ed775dd13235cc205c736855c31c9b50ea9b8928868b"
+  },
+  "costDotError": {
+    "es": "514f87c9c647d055ffd7261545b9a7227bac9c9939c1d0eb37fdeb48fae0fc13",
+    "en": "f4abbcab3b57553cf06f10343ee9fcaf0396544b5803f2af49cf08a89ecb92b5"
+  },
+  "costPrecision": {
+    "es": "24f20b4740816e008d2bd7ebc6725c6d3763aa1f02f37157c55bf84c95355fe9",
+    "en": "569935fa7ee51f03fe0d90e83e633d47ecaa8f28c3bed1a2fb2c2c82da61a51c"
+  },
+  "costMaximum": {
+    "es": "fa4051c0a229569f14450b5c34a4ad49122ce64e0c6b3fe62b449e098ce36c37",
+    "en": "1197b8b7e998ae2ae83e7decf3fb326e0503b48bff31e3eea8b4c3e3978e7388"
+  },
+  "costZero": {
+    "es": "5a35ee08c8c35bf00f00451f1d5d5ac185d68d8a2daaa7ce7e4b5981717c8b14",
+    "en": "ed86ede93b0bc4e617cb9a4c66a2bda0c9a90bd4db3de65c9d5996ddf437bfa1"
+  },
+  "costInvalid": {
+    "es": "9cc80f1f44f838ecf010beba509660b46eb77ed8649af7cec938031db4a8080c",
+    "en": "b1cdfbc56daee83d53f250bcc90d66f22f7a7c148a6d23eee3803389c659acf7"
+  },
+  "exceedsBtc": {
+    "es": "00267e6626929eec154eb9d7946f7f0a6d153705d7bee235818039ecf482fa82",
+    "en": "a88ac580b05b50709453c5be925379d4c8aeb80c269c30be8f88eac804563b6a"
+  },
+  "exceedsSats": {
+    "es": "1a2bc64420b541a58054db6a8ff6e57a11ce49230aa1f90b2c95473037b008bf",
+    "en": "f1836174f2f1b829a6b09e7fe91c6d688a776a6448797a29ba65bfd444027747"
+  },
+  "toolInvalid": {
+    "es": "c55bd826dfe8339e85e00ac3a0ebeacbaf3a3e5c3ccfc6981979542bb61a3390",
+    "en": "4396ba99cdbbbe1d1f38f25c516e7f087577e4d07941b10541ef1b70f54f0ddb"
+  },
+  "toolWait": {
+    "es": "8ff2c418c94189e75c8e5975c76731800dc5577903f050d2693f39b48110bdc5",
+    "en": "368f3a108a6a359ecd23e7f80e50deaae1f9ddcdad1e83af87f5feb55e263458"
+  },
+  "toolTitle": {
+    "es": "ad7a1af30ba6a71a26467c98ba3caba732292f09c0cbb77c65573d8165a8bf3a",
+    "en": "5917785d91fa649288b6ec77869bb900c1d5570a0a2f97ff7c42a7a8d2e6374c"
+  },
+  "toolDescriptionAr": {
+    "es": "e8aef885f0a1ef2237c28445354e1dd86751559236d0b115afe2c55cd0f4fcf1",
+    "en": "7bf9a6ccc6d66011697e9e8fd4fee614390f0a1edfadf16d1a6b825283eb6861"
+  },
+  "toolDescriptionGlobal": {
+    "es": "5e256384d59ccd849fad97bae49401868506019a256de254e1726230e03d38e0",
+    "en": "0781cdda24a76d059ff8f7230b82872bbe16abe97ad8533a3bd22ff9713f9e1d"
+  },
+  "toolAmountAr": {
+    "es": "4b826827d2da6cb6eb3d33987d5f26d107a6c67afb407a7495cab5c10ed85154",
+    "en": "6f5a048997fa4f3979d193e15ef7afef7cc50d5d8ae8596e5215a6a62544f1b2"
+  },
+  "toolAmountGlobal": {
+    "es": "2798fa272ed50842f63a9639487307d4dedcf3b367524fbcd1b09a6d19694a56",
+    "en": "43ead561fad6931cac0586dd94a896a001d5385c5fb646ee011bfc756fe5ea3d"
+  },
+  "toolCurrencyAr": {
+    "es": "9f2b8c220210c56169bd17ead3f5c25ecd594c3e02a9c7cf8ae6fb4438afe27f",
+    "en": "5e08c2c3af6e433b1e286f00bbf6fc9b28bc82439d1cb5b33af8fbbe7372b963"
+  },
+  "toolCurrencyGlobal": {
+    "es": "e556fd252b485791579e31ec40d8ba6722313b7e5a029682f580d7ce3941b7f5",
+    "en": "ba67573f7ebae81dd996e046a8f40b5d88234c040bdf74e12b8a7e51e14c1ae3"
+  },
+  "pageTitleAr": {
+    "es": "ecbc0a471b72142422fc7fc42b5abad646088423f501547e9dc7b66069c5e3d8",
+    "en": "3dee8a04dbff2d0c050bbc7de1b6c18014de6f5f311108676a0ae53090b13b61"
+  },
+  "pageTitleGlobal": {
+    "es": "b887e7b61d6d1d221ba8ff373b776e438bd08c215f031216e69684da282d9626",
+    "en": "c5ee7ead5936cdcd03e7a9cf26a297b4fec759ff6c1eb103ccd0cb396de5741d"
+  },
+  "pageDescriptionAr": {
+    "es": "371b9462fac7c6873b3a6bafe746abea6f2b50d9664ab6dd4c2e61559421d4e0",
+    "en": "1f5e5a7ba44dd1de9e6148ca6de8f56f0a4439f99ae16198c60f84a10cc3b74b"
+  },
+  "pageDescriptionGlobal": {
+    "es": "c322da8a23e767a3189644612812f618df2b4da274fefcd4598683da687859f8",
+    "en": "5f1e3756f71dde95a9cfbd9db147f98ee4afe2c2a162ccefc347be245103ee71"
+  },
+  "noscriptAr": {
+    "es": "91d5dfba888d169c2db936dfecf39589ef3f19d6d641a1aacacb4df730b3cdd6",
+    "en": "f406fa58ab50b4247e12cacc29da8eee03b65c938a8cc454d3213d9d0e3e6327"
+  },
+  "noscriptGlobal": {
+    "es": "5ba2b976d10affa4dc86541f9ddb64f43e14626b4f4a8cef693afb6c1091ba81",
+    "en": "af93056c7d3348e86c7f08bafb12e8a93902e3ea12f2b36b26877e629a1b614c"
+  },
+  "versionGlobal": {
+    "es": "01d8eafc73d9713c4b8bb32be7e9c63a0514595b4c717f37bb760e596be6b99c",
+    "en": "01d8eafc73d9713c4b8bb32be7e9c63a0514595b4c717f37bb760e596be6b99c"
+  },
+  "versionAr": {
+    "es": "c3c3e555eb7de932f7df481c0eaabe0f2ecaedf15d8d1cf57ebad09d6d7b08a6",
+    "en": "c3c3e555eb7de932f7df481c0eaabe0f2ecaedf15d8d1cf57ebad09d6d7b08a6"
+  },
+  "ratesStale": {
+    "es": "0007acadd0ef0e19dce31ea6051221ffd05442a98d6fa7051cc29c365a85a012",
+    "en": "f77b8a1febb8998aa015836b27805cf770171f10ca7d9517076e8e9554bc5c26"
+  }
+}

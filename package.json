@@ -1,0 +1,42 @@
+{
+  "name": "ibit-to-btc",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "npm run i18n:check && node --env-file-if-exists=.env scripts/check-production.mjs --deployment && tsc --noEmit && tsc --noEmit -p gateway/tsconfig.json && vite build && node --env-file-if-exists=.env scripts/build-pages.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "test": "vitest run",
+    "i18n:check": "node scripts/i18n-check.mjs",
+    "i18n:review": "node scripts/i18n-check.mjs --review",
+    "check:production": "node --env-file-if-exists=.env scripts/check-production.mjs",
+    "verify": "npm test && npm run build && npm run gateway:test",
+    "refresh:local": "node --env-file-if-exists=.env scripts/refresh-rates.mjs",
+    "refresh:cloudflare": "node --env-file-if-exists=.env scripts/refresh-rates.mjs --cloudflare",
+    "gateway:dev": "wrangler dev --config gateway/wrangler.jsonc",
+    "gateway:check": "wrangler deploy --dry-run --config gateway/wrangler.jsonc --outdir ../work/gateway-build",
+    "gateway:deploy": "wrangler deploy --config gateway/wrangler.jsonc",
+    "gateway:test": "npm run gateway:check && node scripts/test-gateway-runtime.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/sora": "^5.2.8",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "decimal.js": "10.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261008.1",
+    "@types/node": "^24.19.1",
+    "miniflare": "^5.20261006.0-alpha",
+    "typescript": "7.0.2",
+    "vite": "8.3.3",
+    "vitest": "5.0.3",
+    "wrangler": "^4.148.0"
+  },
+  "overrides": {
+    "sharp": "^0.35.5"
+  }
+}

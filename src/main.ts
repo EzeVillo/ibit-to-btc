@@ -184,7 +184,7 @@ function render(): void {
     document.querySelector<HTMLInputElement>(`input[name="source"][value="${asset}"]`)!.disabled = unavailable;
     sourceSelect.querySelector<HTMLOptionElement>(`option[value="${asset}"]`)!.disabled = unavailable;
   }
-  averageCost.update(source, rates); amountGuard.sync(); clearTimeout(announcementTimer);
+  averageCost.update(rates); amountGuard.sync(); clearTimeout(announcementTimer);
   if (amounts) announcementTimer = setTimeout(() => {
     text('#announcement', assets.filter(asset => asset !== source).map(asset => amounts?.[asset] ? `${format(amounts[asset]!, asset).text} ${info[asset].label}` : t('notAvailable', { asset: info[asset].label })).join(', ') + (roundingNoticeEl.hidden ? '' : `. ${roundingNoticeEl.textContent}`));
   }, 450);

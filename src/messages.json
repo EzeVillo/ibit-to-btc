@@ -360,8 +360,8 @@
     "en": "e.g. {value}"
   },
   "costHelpAr": {
-    "es": "Ingresá el promedio de tu broker o exchange, con comisiones si están incluidas. Cada moneda conserva su propio promedio.",
-    "en": "Enter the average from your broker or exchange, including fees if they are part of it. Each currency keeps its own average."
+    "es": "Ingresá el promedio por CEDEAR de tu broker, con comisiones si están incluidas. Los controles del conversor no modifican este promedio. Cada moneda conserva el suyo.",
+    "en": "Enter your broker’s average per CEDEAR, including fees if they are part of it. The converter controls do not change this average. Each currency keeps its own."
   },
   "costHelpGlobal": {
     "es": "Ingresá el promedio en USD por cuota de IBIT de tu broker, con comisiones si están incluidas.",
@@ -391,10 +391,6 @@
     "es": "Calculado con tu precio promedio y la equivalencia del informe de IBIT del {date}, en la moneda ingresada.",
     "en": "Calculated using your average price and the equivalent from the IBIT report dated {date}, in the currency entered."
   },
-  "costAdjustment": {
-    "es": "El campo muestra la equivalencia redondeada a 2 decimales. El cálculo conserva el promedio original; al editar, se usa el nuevo valor.",
-    "en": "The field shows the equivalent rounded to 2 decimal places. The calculation keeps the original average; editing uses the new value."
-  },
   "costAnnouncement": {
     "es": "Costo equivalente por BTC: {approximation}{value} {currency} por BTC.",
     "en": "Equivalent cost per BTC: {approximation}{value} {currency} per BTC."
@@ -404,16 +400,16 @@
     "en": "Enter your average price and wait for IBIT data."
   },
   "costMethodAr": {
-    "es": "Ingresá el precio promedio por CEDEAR, por cuota de IBIT o por BTC. Para satoshis, el precio se ingresa por BTC. Desde pesos, MEP o CCL, se ingresa por CEDEAR en esa moneda. Dividimos el precio por los BTC que representa esa unidad para obtener el costo equivalente de 1 BTC, con el informe de IBIT que muestra la pantalla.",
-    "en": "Enter the average price per CEDEAR, IBIT share or BTC. For satoshis, enter the price per BTC. From pesos, MEP or CCL, enter the price per CEDEAR in that currency. We divide the price by the BTC represented by that unit to obtain the equivalent cost of 1 BTC, using the IBIT report shown on screen."
+    "es": "Ingresá siempre el precio promedio por CEDEAR y elegí su moneda: ARS, USD MEP o USD CCL. El origen elegido en el conversor no cambia la unidad, la moneda ni el valor de tu promedio. Dividimos el precio por los BTC que representa cada CEDEAR para obtener el costo equivalente de 1 BTC, con el informe de IBIT que muestra la pantalla.",
+    "en": "Always enter the average price per CEDEAR and choose its currency: ARS, USD MEP or USD CCL. The source selected in the converter does not change your average’s unit, currency or value. We divide the price by the BTC represented by each CEDEAR to obtain the equivalent cost of 1 BTC, using the IBIT report shown on screen."
   },
   "costMethodGlobal": {
     "es": "Ingresá siempre el precio promedio en USD por cuota de IBIT, independientemente del origen elegido en el conversor. Dividimos el precio por los BTC que representa cada cuota para obtener el costo equivalente de 1 BTC, con el informe de IBIT que muestra la pantalla.",
     "en": "Always enter the average USD price per IBIT share, regardless of the source selected in the converter. We divide the price by the BTC represented by each share to obtain the equivalent cost of 1 BTC, using the IBIT report shown on screen."
   },
   "costFeesAr": {
-    "es": "Cuando ingresás un precio promedio por CEDEAR o por cuota de IBIT, usamos la equivalencia del informe más reciente disponible para mostrar tu costo por BTC de exposición actual. Si cada CEDEAR o cuota pasa a representar menos BTC por las comisiones y gastos del fondo, tu costo equivalente por BTC aumenta aunque no hagas nuevas compras. Tu precio promedio de compra sigue siendo el mismo.",
-    "en": "When you enter an average price per CEDEAR or IBIT share, we use the equivalent from the latest available report to show your cost per BTC of current exposure. If each CEDEAR or share represents less BTC due to the fund’s fees and expenses, your equivalent cost per BTC increases even without new purchases. Your average purchase price stays the same."
+    "es": "Para tu precio promedio por CEDEAR, usamos la equivalencia del informe más reciente disponible para mostrar tu costo por BTC de exposición actual. Si cada CEDEAR pasa a representar menos BTC por las comisiones y gastos del fondo, tu costo equivalente por BTC aumenta aunque no hagas nuevas compras. Tu precio promedio de compra sigue siendo el mismo.",
+    "en": "For your average price per CEDEAR, we use the equivalent from the latest available report to show your cost per BTC of current exposure. If each CEDEAR represents less BTC due to the fund’s fees and expenses, your equivalent cost per BTC increases even without new purchases. Your average purchase price stays the same."
   },
   "costFeesGlobal": {
     "es": "Cuando ingresás un precio promedio por cuota de IBIT, usamos la equivalencia del informe más reciente disponible para mostrar tu costo por BTC de exposición actual. Si cada cuota pasa a representar menos BTC por las comisiones y gastos del fondo, tu costo equivalente por BTC aumenta aunque no hagas nuevas compras. Tu precio promedio de compra sigue siendo el mismo.",
@@ -428,8 +424,8 @@
     "en": "Each currency keeps an independent average."
   },
   "costReferenceAr": {
-    "es": "Para un costo ingresado por CEDEAR o IBIT, el resultado expresa el costo por BTC de exposición con ese informe. Es una referencia, no un precio exacto de BTC al que recuperarías tu inversión: también influyen la prima o descuento de IBIT, la cotización local del CEDEAR, la moneda y los costos de compra y venta.",
-    "en": "For a cost entered per CEDEAR or IBIT, the result expresses the cost per BTC of exposure using that report. It is a reference, not an exact BTC price at which you would recover your investment: IBIT’s premium or discount, the local CEDEAR quote, the currency and trading costs also matter."
+    "es": "Para un costo ingresado por CEDEAR, el resultado expresa el costo por BTC de exposición con ese informe. Es una referencia, no un precio exacto de BTC al que recuperarías tu inversión: también influyen la prima o descuento de IBIT, la cotización local del CEDEAR, la moneda y los costos de compra y venta.",
+    "en": "For a cost entered per CEDEAR, the result expresses the cost per BTC of exposure using that report. It is a reference, not an exact BTC price at which you would recover your investment: IBIT’s premium or discount, the local CEDEAR quote, the currency and trading costs also matter."
   },
   "costReferenceGlobal": {
     "es": "Para un costo ingresado por IBIT, el resultado expresa el costo por BTC de exposición con ese informe. Es una referencia, no un precio exacto de BTC al que recuperarías tu inversión: también influyen la prima o descuento de IBIT y los costos de compra y venta.",

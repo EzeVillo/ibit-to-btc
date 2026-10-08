@@ -95,39 +95,34 @@ describe('localized numbers with the same strict validations', () => {
 
 describe('global average purchase cost and copy', () => {
   it('uses USD per IBIT share and the fund report, independently of the market quote', () => {
-    const model = new AverageCostModel('global'); model.setSource('usd'); model.setPrice('43.68');
-    expect(getCostUnit('usd', 'global')).toBe('ibit');
+    const model = new AverageCostModel('global'); model.setPrice('43.68');
+    expect(getCostUnit('global')).toBe('ibit');
     expect(model.view(rates).equivalents!.btc.eq(78000)).toBe(true);
     expect(model.view({ ...rates, ibitUsd: null, quoteStatus: 'unavailable' }).equivalents!.btc.eq(78000)).toBe(true);
     expect(model.view(rates).equivalents!.cedear).toBeNull();
-    model.setSource('btc'); expect(model.view(rates).input).toBe('43.68');
-    model.setSource('ibit'); expect(model.view(rates).input).toBe('43.68');
+    expect(model.view(rates).input).toBe('43.68');
     model.clear(); expect(model.view(rates).hasPrice).toBe(false);
   });
-  it.each(assetsFor('global'))('keeps the average price per IBIT share when converting from %s', source => {
+  it('keeps the average price per IBIT share when editing and refreshing rates', () => {
     const model = new AverageCostModel('global');
     model.setPrice('43.68');
-    model.setSource(source);
-    expect(getCostUnit(source, 'global')).toBe('ibit');
-    expect(model.view(null)).toMatchObject({ input: '43.68', inputApproximate: false, hasPrice: true });
+    expect(model.view(null)).toMatchObject({ input: '43.68', hasPrice: true });
     expect(model.view(rates).input).toBe('43.68');
     expect(model.view(rates).equivalents!.btc.eq(78000)).toBe(true);
     model.setPrice('44.80');
     expect(model.view(rates).equivalents!.ibit.eq('44.8')).toBe(true);
     expect(model.view(rates).equivalents!.btc.eq(80000)).toBe(true);
-    model.setSource('ibit');
+    model.view({ ...rates, holdingsBtc: '28' });
     expect(model.view(rates).input).toBe('44.80');
   });
   it('retains the original purchase price when the exposure report changes', () => {
     const model = new AverageCostModel('global'); model.setPrice('43.68');
-    model.setSource('btc');
     expect(model.view({ ...rates, holdingsBtc: '28' }).equivalents!.btc.eq(156000)).toBe(true);
     expect(model.view(rates).input).toBe('43.68');
   });
-  it('rejects zero, excess average-price precision and unsupported sources', () => {
+  it('rejects zero and excess average-price precision', () => {
     expect(() => parseAverageCost('0', 'global')).toThrow('greater than zero');
     expect(() => parseAverageCost('43.681', 'global')).toThrow('2 decimal');
-    expect(() => new AverageCostModel('global').setSource('cedear')).toThrow();
   });
   it('renders the shared English text and only the relevant global methodology', () => {
     expect(translator('global')('clear')).toBe('Clear'); expect(translator('ar')('clear')).toBe('Limpiar');

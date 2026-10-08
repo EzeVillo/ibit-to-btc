@@ -1,7 +1,6 @@
 import Decimal from 'decimal.js';
 import { describe, expect, it } from 'vitest';
 import { AverageCostModel, formatCost, getCostEquivalents, getCostUnit, parseAverageCost } from './average-cost';
-import { assets } from './conversion';
 import { SOURCES } from './rates';
 import type { Rates } from './rates';
 
@@ -17,8 +16,9 @@ describe('precio promedio equivalente', () => {
     expect(result.cedear.eq('4.368')).toBe(true);
     expect(result.ibit.eq('43.68')).toBe(true);
   });
-  it('admite todos los orígenes y pide precio por BTC para satoshis', () => {
-    expect(assets.map(asset => getCostUnit(asset))).toEqual(['cedear', 'ibit', 'btc', 'btc', 'cedear', 'cedear', 'cedear']);
+  it('fija la unidad de compra por mercado, independientemente del conversor', () => {
+    expect(getCostUnit('ar')).toBe('cedear');
+    expect(getCostUnit('global')).toBe('ibit');
   });
   it('usa la equivalencia del fondo sin depender de cotizaciones monetarias', () => {
     const price = new Decimal('6552');
@@ -31,52 +31,45 @@ describe('precio promedio equivalente', () => {
     expect(result.ibit.eq('40')).toBe(true);
     expect(result.btc.eq('80000')).toBe(true);
   });
-  it('conserva precisión en conversiones repetidas y actualiza desde la unidad original', () => {
+  it('conserva el promedio exacto al recalcular y actualizar el informe', () => {
     const model = new AverageCostModel();
     const recurring = { ...rates, holdingsBtc: '53.12345678', sharesOutstanding: '100001' };
     model.setPrice('4,37');
     const initial = model.view(recurring).equivalents!.btc;
     for (let i = 0; i < 10; i++) {
-      model.setSource('btc');
-      expect(model.view(recurring).inputApproximate).toBe(true);
+      expect(model.view(recurring).input).toBe('4,37');
       expect(model.view(recurring).equivalents!.btc.eq(initial)).toBe(true);
-      model.setSource('ibit');
-      model.setSource('cedear');
     }
     expect(model.view(recurring).input).toBe('4,37');
     const nextRates = { ...recurring, holdingsBtc: '52' };
-    model.setSource('btc');
+    expect(model.view(nextRates).input).toBe('4,37');
     expect(model.view(nextRates).equivalents!.cedear!.eq('4.37')).toBe(true);
     expect(model.view(nextRates).equivalents!.btc.eq(initial)).toBe(false);
   });
-  it('mantiene un costo ingresado por BTC cuando se actualiza el informe', () => {
+  it.each([['ars', '80'], ['usd', '4'], ['usd_ccl', '4']] as const)('convierte el promedio de %s desde CEDEAR y nunca lo interpreta por BTC', (currency, raw) => {
     const model = new AverageCostModel();
-    model.setSource('btc');
-    model.setPrice('78000');
-    model.setSource('ibit');
-    const next = model.view({ ...rates, holdingsBtc: '50' });
-    expect(next.equivalents!.btc.eq(78000)).toBe(true);
-    expect(next.input).toBe('39');
-    model.setPrice('40');
-    model.setSource('btc');
-    expect(model.view({ ...rates, holdingsBtc: '50' }).input).toBe('80000');
+    model.currency = currency;
+    model.setPrice(raw);
+    const view = model.view(rates);
+    expect(view.input).toBe(raw);
+    expect(view.equivalents!.cedear!.eq(raw)).toBe(true);
+    expect(view.equivalents!.btc.eq(new Decimal(raw).mul(10).div('0.00056'))).toBe(true);
   });
   it('conserva promedios independientes al cambiar entre pesos, MEP y CCL', () => {
     const model = new AverageCostModel();
     model.setPrice('4,48');
-    model.setSource('ars');
+    model.currency = 'ars';
     expect(model.currency).toBe('ars');
     expect(model.view(rates).hasPrice).toBe(false);
     model.setPrice('6552');
-    model.setSource('usd_ccl');
+    model.currency = 'usd_ccl';
     expect(model.view(rates).hasPrice).toBe(false);
     model.setPrice('4,2');
-    model.setSource('usd');
+    model.currency = 'usd';
     expect(model.view(rates).equivalents!.btc.eq(80000)).toBe(true);
-    model.setSource('ars');
+    model.currency = 'ars';
     expect(model.view(rates).equivalents!.btc.eq(117000000)).toBe(true);
     model.currency = 'usd_ccl';
-    model.setSource('ars');
     expect(model.currency).toBe('usd_ccl');
     expect(model.view(rates).equivalents!.btc.eq(75000)).toBe(true);
   });
@@ -84,30 +77,26 @@ describe('precio promedio equivalente', () => {
     const model = new AverageCostModel();
     model.setPrice('4,37');
     expect(model.view(null).input).toBe('4,37');
-    model.setSource('ibit');
     expect(model.view(null).equivalents).toBeNull();
-    expect(model.view(rates).input).toBe('43,7');
+    expect(model.view(rates).input).toBe('4,37');
     model.setPrice('-1');
     expect(model.view(rates).error).toBeTruthy();
-    model.setSource('cedear');
-    expect(model.view(rates).error).toBeTruthy();
-    model.setSource('ars');
+    expect(model.view(null).error).toBeTruthy();
+    model.currency = 'ars';
     model.setPrice('6552');
     model.clear();
     expect(model.view(rates).hasPrice).toBe(false);
-    model.setSource('usd');
+    model.currency = 'usd';
     expect(model.view(rates).hasPrice).toBe(false);
   });
-  it.each(['ars', 'usd', 'usd_ccl'] as const)('limita los precios en %s a dos decimales al cambiar de unidad', currency => {
+  it.each(['ars', 'usd', 'usd_ccl'] as const)('conserva los dos decimales del precio en %s aunque el resultado requiera redondeo', currency => {
     const model = new AverageCostModel();
     model.currency = currency;
-    model.setSource('btc');
-    model.setPrice('78000,01');
-    for (const source of ['cedear', 'ibit', 'btc'] as const) {
-      model.setSource(source);
-      const view = model.view(rates);
-      expect((view.input.split(',')[1] ?? '').length).toBeLessThanOrEqual(2);
-      expect(view.equivalents!.btc.eq('78000.01')).toBe(true);
+    model.setPrice('4,37');
+    for (const nextRates of [rates, { ...rates, holdingsBtc: '53.12345678' }, rates]) {
+      const view = model.view(nextRates);
+      expect(view.input).toBe('4,37');
+      expect(view.equivalents!.cedear!.eq('4.37')).toBe(true);
     }
     model.setPrice('4,371');
     expect(model.view(rates).error).toContain('hasta 2 decimales');

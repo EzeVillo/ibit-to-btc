@@ -162,9 +162,9 @@ Se usa el precio del CEDEAR en cada especie, sin consultar un tipo de cambio gen
 El bloque independiente de costo equivalente por BTC, debajo del conversor, muestra siempre la entrada del precio promedio y su resultado:
 
 - **Internacional:** costo en USD por cuota de IBIT para todos los orígenes. Seleccionar BTC, satoshis o USD en el conversor no cambia la unidad ni el valor ingresado del promedio.
-- **Argentina:** costo por CEDEAR para los orígenes CEDEAR, ARS, USD MEP y USD CCL; por cuota para IBIT; y por BTC para BTC y satoshis. El selector de moneda admite ARS, USD MEP y USD CCL. Al elegir un origen monetario, se selecciona inicialmente esa misma moneda.
+- **Argentina:** costo por CEDEAR para todos los orígenes. El selector propio del promedio admite ARS, USD MEP y USD CCL; el resultado muestra ARS o USD (tanto para MEP como para CCL). Elegir CEDEAR, IBIT, BTC, satoshis o una moneda en el conversor no modifica la unidad, la moneda ni el valor del promedio.
 
-En Argentina, cambiar entre activos adapta la unidad del promedio; cambiar de moneda recupera un borrador independiente y no convierte costos históricos con tipos de cambio actuales.
+En Argentina, cambiar la moneda dentro del bloque del promedio recupera un borrador independiente y no convierte costos históricos con tipos de cambio actuales. El bloque recibe únicamente el informe del fondo; no depende del origen ni de la cantidad del conversor.
 
 ```text
 BTC_por_CEDEAR = BTC_por_IBIT / ratio
@@ -176,7 +176,7 @@ El bloque muestra únicamente el costo por 1 BTC, en la moneda ingresada. Los re
 
 Para un costo ingresado por CEDEAR o IBIT, el resultado expresa el costo por BTC de exposición con ese informe. La metodología aclara que es una referencia y no un precio exacto de BTC para recuperar la inversión: también influyen la prima o descuento de IBIT, la cotización local del CEDEAR, la moneda y los costos de compra y venta.
 
-Todos los importes fiat se ingresan y muestran con un máximo de dos decimales, incluido el precio promedio aunque se exprese por BTC. El promedio acepta punto decimal en la internacional y coma en Argentina. Cada borrador conserva su valor y unidad originales; cambiar de origen o actualizar el informe no acumula redondeos. Al editar un promedio adaptado se adopta el nuevo valor y unidad. La presentación avisa cuando redondea a dos decimales. Las comisiones solo se incluyen si forman parte del precio ingresado. El botón de limpieza elimina la cantidad y todos los promedios; el bloque permanece visible y vuelve a pedir el precio promedio. Los costos permanecen en memoria del navegador y no se envían a la API ni se guardan en almacenamiento persistente.
+Todos los importes fiat se ingresan y muestran con un máximo de dos decimales, incluido el precio promedio. El promedio acepta punto decimal en la internacional y coma en Argentina. Cada borrador conserva el texto ingresado; cambiar de origen o actualizar el informe no lo modifica ni acumula redondeos. La presentación del costo por BTC avisa cuando redondea a dos decimales. Las comisiones solo se incluyen si forman parte del precio ingresado. El botón de limpieza elimina la cantidad y todos los promedios; el bloque permanece visible y vuelve a pedir el precio promedio. Los costos permanecen en memoria del navegador y no se envían a la API ni se guardan en almacenamiento persistente.
 
 ## Despliegue
 

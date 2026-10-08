@@ -1,6 +1,6 @@
 import Decimal from 'decimal.js';
-import { AMOUNT_DECIMAL_PLACES, assetsFor, formatAmount, isCurrencyAsset } from './conversion';
-import type { Asset, CurrencyAsset } from './conversion';
+import { AMOUNT_DECIMAL_PLACES, formatAmount } from './conversion';
+import type { CurrencyAsset } from './conversion';
 import { isGlobalRates } from './rates';
 import type { AnyRates, Rates } from './rates';
 import { decimalSeparator } from './market';
@@ -26,9 +26,8 @@ export function getCostInputRules(market: Market = 'ar'): NumericInputRules {
 }
 export const COST_INPUT_RULES = getCostInputRules();
 
-export function getCostUnit(source: Asset, market: Market = 'ar'): CostUnit {
-  if (market === 'global') return 'ibit';
-  return source === 'ibit' ? 'ibit' : source === 'btc' || source === 'sats' ? 'btc' : 'cedear';
+export function getCostUnit(market: Market = 'ar'): 'cedear' | 'ibit' {
+  return market === 'global' ? 'ibit' : 'cedear';
 }
 
 export function parseAverageCost(raw: string, market: Market = 'ar'): Decimal | null {
@@ -53,62 +52,43 @@ export function getCostEquivalents(price: Decimal, unit: CostUnit, rates: AnyRat
   return { cedear: unit === 'cedear' ? price : ibit.div(ratio), ibit, btc: unit === 'btc' ? price : ibit.div(btcPerIbit) };
 }
 
-export function costInput(price: Decimal, market: Market = 'ar'): string {
-  return price.toDecimalPlaces(COST_DECIMAL_PLACES).toFixed().replace('.', decimalSeparator(market));
-}
-
 export function formatCost(price: Decimal, market: Market = 'ar'): { text: string; approximate: boolean } {
   return formatAmount(price, 'usd', market);
 }
 
-interface CostDraft { raw: string; unit: CostUnit }
 export interface CostView {
   input: string;
-  inputApproximate: boolean;
   error: string;
   equivalents: AnyCostEquivalents | null;
   hasPrice: boolean;
 }
 
-/** Keep the original unit and decimal input so switching views or refreshing rates cannot erode precision. */
+/** The purchase unit is fixed per market; only the cost's own currency selects a draft. */
 export class AverageCostModel {
   currency: CurrencyAsset = 'usd';
-  source: Asset = 'cedear';
-  private drafts: Record<CurrencyAsset, CostDraft> = {
-    ars: { raw: '', unit: 'cedear' }, usd: { raw: '', unit: 'cedear' }, usd_ccl: { raw: '', unit: 'cedear' },
+  private drafts: Record<CurrencyAsset, string> = {
+    ars: '', usd: '', usd_ccl: '',
   };
 
-  constructor(private readonly market: Market = 'ar') {
-    if (market === 'global') { this.source = 'ibit'; this.drafts.usd.unit = 'ibit'; }
-  }
-
-  setSource(source: Asset): void {
-    if (!assetsFor(this.market).includes(source)) throw new Error(translator(this.market)('unsupportedAsset'));
-    if (source !== this.source && isCurrencyAsset(source)) this.currency = source;
-    this.source = source;
-  }
+  constructor(private readonly market: Market = 'ar') {}
 
   setPrice(raw: string): void {
-    this.drafts[this.currency] = { raw, unit: getCostUnit(this.source, this.market) };
+    this.drafts[this.currency] = raw;
   }
 
   clear(): void {
-    for (const currency of ['ars', 'usd', 'usd_ccl'] as const) this.drafts[currency] = { raw: '', unit: this.market === 'ar' ? 'cedear' : 'ibit' };
+    for (const currency of ['ars', 'usd', 'usd_ccl'] as const) this.drafts[currency] = '';
   }
 
   view(rates: AnyRates | null): CostView {
-    const draft = this.drafts[this.currency];
-    const empty: CostView = { input: draft.raw, inputApproximate: false, error: '', equivalents: null, hasPrice: false };
-    if (draft.raw === decimalSeparator(this.market)) return empty;
+    const raw = this.drafts[this.currency];
+    const empty: CostView = { input: raw, error: '', equivalents: null, hasPrice: false };
+    if (raw === decimalSeparator(this.market)) return empty;
     let price: Decimal | null;
-    try { price = parseAverageCost(draft.raw, this.market); }
+    try { price = parseAverageCost(raw, this.market); }
     catch (error) { return { ...empty, error: (error as Error).message }; }
     if (!price) return empty;
-    const unit = getCostUnit(this.source, this.market);
-    if (!rates) return { ...empty, input: unit === draft.unit ? draft.raw : '', hasPrice: true };
-    const equivalents = getCostEquivalents(price, draft.unit, rates);
-    const input = unit === draft.unit ? draft.raw : costInput(equivalents[unit]!, this.market);
-    const displayed = new Decimal(input.replace(',', '.'));
-    return { input, inputApproximate: !displayed.eq(equivalents[unit]!), error: '', equivalents, hasPrice: true };
+    const equivalents = rates ? getCostEquivalents(price, getCostUnit(this.market), rates) : null;
+    return { ...empty, equivalents, hasPrice: true };
   }
 }

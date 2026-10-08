@@ -17,5 +17,18 @@
     X-Frame-Options = "DENY"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-# Redirects are generated in dist/_redirects; CSP and caching in dist/_headers.
+# ezevillo.com also serves project landings through this site's routing.
+# Keep these project prefixes before any future catch-all rule.
+[[redirects]]
+  from = "/git-review-workflow"
+  to = "/git-review-workflow/"
+  status = 301
+
+[[redirects]]
+  from = "/git-review-workflow/*"
+  to = "https://ezevillo-git-review-workflow.netlify.app/:splat"
+  status = 200
+  force = true
+
+# Converter redirects are generated in dist/_redirects; CSP and caching in dist/_headers.
 # Both use APP_BASE_PATH and the public gateway URL during the build.

@@ -10,7 +10,7 @@
     "ALLOWED_ORIGIN": "https://ezevillo.com"
   },
   "kv_namespaces": [
-    { "binding": "RATES_KV", "id": "REPLACE_WITH_KV_NAMESPACE_ID" }
+    { "binding": "RATES_KV", "id": "9f3a4355968f46f8bc2a49962c11a498" }
   ],
   "durable_objects": {
     "bindings": [{ "name": "RATES_COORDINATOR", "class_name": "RatesCoordinator" }]

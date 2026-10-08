@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { requestRates } from './rates-client';
 import { GLOBAL_SOURCES, SOURCES } from './rates';
 
@@ -6,6 +6,10 @@ const fund = { asOf: '2026-10-05', fetchedAt: '2026-10-06T17:00:00Z', holdingsBt
 const ar = { ...fund, cedearsPerShare: '10', cedearRatio: '10:1', cedearArs: null, cedearUsd: null, cedearUsdCcl: null, sources: SOURCES };
 const global = { ...fund, market: 'global', ibitUsd: null, quoteStatus: 'unavailable', sources: GLOBAL_SOURCES };
 
+beforeEach(() => {
+  vi.stubEnv('BASE_URL', '/');
+  vi.stubEnv('VITE_RATES_API_URL', '');
+});
 afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 
 describe('loading rates in the browser', () => {

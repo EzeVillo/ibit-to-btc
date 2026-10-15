@@ -28,7 +28,8 @@ export async function requestRates(market: Market, basePath = import.meta.env.BA
   let response: Response;
   try {
     response = await fetch(`${ratesEndpoint(gatewayUrl, basePath)}?market=${market}`, {
-      credentials: 'omit', signal: AbortSignal.timeout(15_000),
+      // Always contact the gateway; its shared cache already limits storage reads.
+      cache: 'no-store', credentials: 'omit', signal: AbortSignal.timeout(15_000),
     });
   } catch (error) {
     throw transportFailure(error) ?? new RatesLoadError('network');

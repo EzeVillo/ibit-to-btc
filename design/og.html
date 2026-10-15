@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Social cover · IBIT to BTC</title>
+<!-- Export the 1200 × 630 viewport to public/og-ibit.png after document.fonts.ready. -->
+<style>
+@font-face{font-family:Sora;src:url('../node_modules/@fontsource-variable/sora/files/sora-latin-wght-normal.woff2');font-weight:100 800}
+@font-face{font-family:Mono;src:url('../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2')}
+*{box-sizing:border-box}html,body{width:1200px;height:630px;margin:0;overflow:hidden}
+body{background:#f2f5fa;color:#12203a;font-family:Sora,sans-serif;padding:48px 64px}
+header{display:flex;align-items:center;justify-content:space-between;padding-bottom:28px;border-bottom:1px solid #dfe5ef}
+.brand{font-size:27px;font-weight:650;letter-spacing:-1px}.brand span{color:#173cd5}
+.units{font-family:Mono,monospace;font-size:17px;color:#596781}
+main{display:flex;align-items:center;gap:33px;margin-top:58px}
+.asset{height:230px;flex:1;display:flex;flex-direction:column;justify-content:center;padding:34px 36px;border:1px solid #dfe5ef;border-radius:18px;background:#fff}
+.asset.btc{background:#173cd5;border-color:#173cd5;color:#fff}
+.symbol{font-size:87px;font-weight:600;line-height:1.05;letter-spacing:-5px}
+.label{margin-top:26px;font-family:Mono,monospace;font-size:21px;color:#596781}
+.btc .label{color:#d3ddff}
+.arrows{width:84px;color:#173cd5;flex-shrink:0}
+footer{position:absolute;left:64px;right:64px;bottom:45px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #dfe5ef;padding-top:25px;font-family:Mono,monospace;font-size:17px;color:#596781}
+.author{font-family:Sora,sans-serif;font-weight:600;font-size:20px;letter-spacing:-.8px;color:#12203a}.author span{color:#173cd5}
+</style>
+<header><div class="brand">IBIT <span>to</span> BTC</div><div class="units">IBIT · BTC · sats · USD</div></header>
+<main>
+  <div class="asset"><div class="symbol">IBIT</div><div class="label">iShares Bitcoin Trust</div></div>
+  <svg class="arrows" viewBox="0 0 84 100" fill="none" aria-label="Convert in either direction"><path d="M5 30H77M59 12L77 30 59 48M79 70H7M25 52L7 70 25 88" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="asset btc"><div class="symbol">BTC</div><div class="label">Bitcoin</div></div>
+</main>
+<footer><span>ezevillo.com/ibit-to-btc</span><span class="author">ezevillo<span>.</span></span></footer>
+</html>

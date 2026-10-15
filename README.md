@@ -52,6 +52,12 @@ El precio estadounidense de IBIT se consulta en la API documentada de Finnhub: `
 
 `npm run build` genera HTML propio para la raíz de la aplicación y su subruta `ar/`, incluyendo idioma, título, descripción y mensaje sin JavaScript. Con un dominio configurado genera canonical por página, alternates `en`, `es-AR` y `x-default`, sitemap y robots. Los Deploy Previews de Netlify llevan `noindex`.
 
+Ambas versiones comparten la portada social `public/og-ibit.png` (1200 × 630).
+El build genera Open Graph y Twitter con títulos y descripciones por idioma,
+la URL de cada página y la imagen bajo `SITE_URL` y `APP_BASE_PATH`.
+La fuente editable está en `design/og.html`; para regenerar el PNG, ejecutar
+`npm ci` y capturar ese HTML a 1200 × 630 después de cargar las fuentes.
+
 El gateway admite `GET /ibit-to-btc/api/rates?market=global` y `?market=ar`, con el prefijo configurable. Omitir `market` equivale a `ar`; otros parámetros, mercados duplicados y métodos de actualización se rechazan. Las respuestas se cachean por mercado, pero un único Durable Object privado coordina la lectura del snapshot de ambos mercados: 100 solicitudes simultáneas sin caché comparten una sola lectura de KV. La consulta internacional no depende del éxito de Comafi o Data912. Si nunca hubo una cotización USD válida se deshabilita esa conversión; si hubo una y su actualización falla se conserva con su timestamp original y un aviso de antigüedad. No se inventan precios ni se actualizan sus fechas al reutilizarlos.
 
 ```text

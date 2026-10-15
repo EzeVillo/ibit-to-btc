@@ -52,7 +52,23 @@ export async function buildPages({ distDirectory, basePath, siteUrl, context, ga
     const metadata = origin ? `<link rel="canonical" href="${origin}${url}" />
     <link rel="alternate" hreflang="en" href="${origin}${globalPath}" />
     <link rel="alternate" hreflang="es-AR" href="${origin}${arPath}" />
-    <link rel="alternate" hreflang="x-default" href="${origin}${globalPath}" />` : '';
+    <link rel="alternate" hreflang="x-default" href="${origin}${globalPath}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IBIT to BTC" />
+    <meta property="og:locale" content="${market === 'ar' ? 'es_AR' : 'en_US'}" />
+    <meta property="og:url" content="${origin}${url}" />
+    <meta property="og:title" content="${escape(messages[`pageTitle${suffix}`][lang])}" />
+    <meta property="og:description" content="${escape(messages[`pageDescription${suffix}`][lang])}" />
+    <meta property="og:image" content="${origin}${appPath(prefix, 'og-ibit.png')}" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="IBIT ↔ BTC · sats · USD" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escape(messages[`pageTitle${suffix}`][lang])}" />
+    <meta name="twitter:description" content="${escape(messages[`pageDescription${suffix}`][lang])}" />
+    <meta name="twitter:image" content="${origin}${appPath(prefix, 'og-ibit.png')}" />
+    <meta name="twitter:image:alt" content="IBIT ↔ BTC · sats · USD" />` : '';
     page = page.replace('</head>', `${metadata}${isPreview ? '<meta name="robots" content="noindex, nofollow" />' : ''}\n  </head>`);
     if (market === 'ar') await mkdir(join(appDirectory, 'ar'), { recursive: true });
     await writeFile(join(appDirectory, market === 'ar' ? 'ar/index.html' : 'index.html'), page);

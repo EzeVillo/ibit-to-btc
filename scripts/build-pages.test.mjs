@@ -2,6 +2,7 @@ import { mkdtemp, mkdir, readFile, writeFile, readdir, rm } from 'node:fs/promis
 import { tmpdir } from 'node:os';
 import { basename, dirname, join, resolve } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
+import { JSDOM } from 'jsdom';
 import { buildPages } from './build-pages.mjs';
 
 const directories = [];
@@ -21,6 +22,7 @@ async function fixture(basePath) {
   await writeFile(join(distDirectory, 'assets', 'app.js'), 'example bundle');
   await writeFile(join(distDirectory, 'theme.js'), 'example theme');
   await writeFile(join(distDirectory, 'favicon.svg'), '<svg/>');
+  await writeFile(join(distDirectory, 'og-ibit.png'), 'example social cover');
   await writeFile(join(distDirectory, 'index.html'), `<html lang="en"><head><title>Original</title><meta name="description" content="Original" /><script src="${basePath}theme.js"></script><script type="module" src="${basePath}assets/app.js"></script></head><body><noscript>Original</noscript></body></html>`);
   return distDirectory;
 }
@@ -38,6 +40,20 @@ describe('deployment below a project path', () => {
     expect(ar).toContain(`hreflang="en" href="https://ezevillo.com${basePath}"`);
     expect(ar).toContain(`src="${basePath}assets/app.js"`);
     expect(page).not.toContain('noindex');
+    for (const [html, path, locale] of [[page, basePath, 'en_US'], [ar, `${basePath}ar/`, 'es_AR']]) {
+      const document = new JSDOM(html).window.document;
+      const meta = name => document.querySelector(`meta[property="${name}"], meta[name="${name}"]`)?.content;
+      expect(meta('og:url')).toBe(`https://ezevillo.com${path}`);
+      expect(meta('og:locale')).toBe(locale);
+      expect(meta('og:title')).toBe(document.title);
+      expect(meta('og:description')).toBe(meta('description'));
+      expect(meta('twitter:title')).toBe(document.title);
+      expect(meta('twitter:description')).toBe(meta('description'));
+      expect(meta('og:image')).toBe(`https://ezevillo.com${basePath}og-ibit.png`);
+      expect(meta('twitter:image')).toBe(meta('og:image'));
+      expect(meta('twitter:card')).toBe('summary_large_image');
+    }
+    expect(await readFile(join(appDirectory, 'og-ibit.png'), 'utf8')).toBe('example social cover');
     expect(await readFile(join(appDirectory, 'assets', 'app.js'), 'utf8')).toBe('example bundle');
     expect(await readFile(join(appDirectory, 'theme.js'), 'utf8')).toBe('example theme');
     const rules = await readFile(join(distDirectory, '_redirects'), 'utf8');

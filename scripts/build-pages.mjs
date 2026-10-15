@@ -65,7 +65,10 @@ export async function buildPages({ distDirectory, basePath, siteUrl, context, ga
   await writeFile(join(dist, 'robots.txt'), isPreview ? 'User-agent: *\nDisallow: /\n'
     : `User-agent: *\nAllow: /\n${sitemapUrl ? `Sitemap: ${sitemapUrl}\n` : ''}`);
   const redirects = [
-    ...(prefix === '/' ? [] : [`${prefix.slice(0, -1)} ${prefix} 301`]),
+    ...(prefix === '/' ? [] : [
+      `/ ${origin && !isPreview ? `${origin}${globalPath}` : globalPath} 301`,
+      `${prefix.slice(0, -1)} ${prefix} 301`,
+    ]),
     `${appPath(prefix, 'ar')} ${arPath} 301`,
   ];
   await writeFile(join(dist, '_redirects'), `${redirects.join('\n')}\n`);

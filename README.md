@@ -27,7 +27,7 @@ Reemplazar `TU-SUBDOMINIO` por el subdominio del Worker desplegado. Las credenci
 
 Para desarrollo, copiar `.env.example` a `.env`. En Netlify, `SITE_URL`, `APP_BASE_PATH` y `VITE_RATES_API_URL` son variables de build. `FINNHUB_API_KEY`, `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_KV_NAMESPACE_ID` y `CLOUDFLARE_KV_API_TOKEN` son variables de la función privada; no hacen falta durante el build. El Worker público no recibe credenciales de Finnhub ni de la API de administración de Cloudflare. Los archivos `.env`, el estado local de Wrangler y los snapshots de desarrollo se ignoran en Git.
 
-El build coloca los archivos estáticos en `dist/ibit-to-btc/` (o la ruta elegida), dejando `dist/` como directorio de publicación. Genera `dist/_redirects` solo para las URLs sin barra final y `dist/_headers` para CSP, caché de assets e indexación de previews. El navegador consulta `VITE_RATES_API_URL` directamente en Cloudflare; la CSP permite exactamente su origen. No existe una API pública de cotizaciones en Netlify. El sitemap se publica en `/ibit-to-btc/sitemap.xml`.
+El build coloca los archivos estáticos en `dist/ibit-to-btc/` (o la ruta elegida), dejando `dist/` como directorio de publicación. Genera `dist/_redirects` para las URLs sin barra final y para redirigir `/` al conversor público cuando se publica bajo una subruta. En previews, esa redirección conserva el dominio del preview. Genera `dist/_headers` para CSP, caché de assets e indexación de previews. El navegador consulta `VITE_RATES_API_URL` directamente en Cloudflare; la CSP permite exactamente su origen. No existe una API pública de cotizaciones en Netlify. El sitemap se publica en `/ibit-to-btc/sitemap.xml`.
 
 ### Varios proyectos con repositorios independientes
 
@@ -37,7 +37,7 @@ El sitio de origen del conversor es `https://neon-macaron-a52e5c.netlify.app`. E
 
 El `robots.txt` del portfolio incluye `Sitemap: https://ezevillo.com/ibit-to-btc/sitemap.xml`. La CSP y la caché del conversor siguen generándose aquí y las respuestas del proxy conservan esos headers. Las credenciales y la función programada permanecen en el sitio de IBIT; el portfolio no las necesita.
 
-**Migración pendiente de publicación:** al revisar la configuración el 15 de octubre de 2026, `ezevillo.com` todavía estaba asociado al sitio de IBIT y el portfolio no tenía un sitio en Netlify. Los commits no trasladan el dominio. Seguir `docs/netlify-migration.md` del portfolio: publicar y comprobar primero sus proxies, trasladar el dominio y recién después desplegar la limpieza de este repositorio. Hasta ese cambio, el despliegue vigente de IBIT conserva las rutas de Git Review y Truco.
+**Migración publicada el 15 de octubre de 2026:** `ezevillo.com` pertenece al portfolio y la limpieza de este repositorio ya está desplegada. Ver `docs/netlify-migration.md` del portfolio. Subir commits a GitHub sin créditos de publicación no reemplaza el despliegue vigente: hay que comprobar o reintentar el deploy cuando vuelva el cupo. El nombre del sitio cambia su dirección inmediatamente; mantener el origen actual hasta poder coordinar el cambio del proxy.
 
 ## Cotización internacional y configuración de producción
 

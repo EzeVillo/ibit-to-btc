@@ -44,7 +44,12 @@ describe('deployment below a project path', () => {
     expect(rules).not.toContain('/.netlify/functions/rates');
     expect(rules).not.toContain('api/rates');
     expect(rules).toContain(`${basePath}ar ${basePath}ar/ 301`);
-    if (basePath !== '/') expect(rules).toContain(`${basePath.slice(0, -1)} ${basePath} 301`);
+    if (basePath !== '/') {
+      expect(rules.split('\n')).toContain(`/ https://ezevillo.com${basePath} 301`);
+      expect(rules).toContain(`${basePath.slice(0, -1)} ${basePath} 301`);
+    } else {
+      expect(rules.split('\n').some(rule => rule.startsWith('/ '))).toBe(false);
+    }
     const sitemap = await readFile(join(appDirectory, 'sitemap.xml'), 'utf8');
     expect(sitemap).toContain(`<loc>https://ezevillo.com${basePath}ar/</loc>`);
     expect(await readFile(join(distDirectory, 'robots.txt'), 'utf8')).toContain(`Sitemap: https://ezevillo.com${basePath}sitemap.xml`);
@@ -59,6 +64,7 @@ describe('deployment below a project path', () => {
     expect(await readFile(join(distDirectory, 'ibit-to-btc', 'index.html'), 'utf8')).toContain('noindex, nofollow');
     expect(await readFile(join(distDirectory, 'robots.txt'), 'utf8')).toContain('Disallow: /');
     expect(await readFile(join(distDirectory, '_headers'), 'utf8')).toContain('X-Robots-Tag: noindex, nofollow');
+    expect((await readFile(join(distDirectory, '_redirects'), 'utf8')).split('\n')).toContain('/ /ibit-to-btc/ 301');
     expect(await readdir(join(distDirectory, 'ibit-to-btc'))).not.toContain('sitemap.xml');
   });
   it.each(['https://ezevillo.com/ibit-to-btc/', 'http://ezevillo.com', 'https://user:password@ezevillo.com', 'https://ezevillo.com?x=1'])('rejects invalid SITE_URL %s before moving files', async siteUrl => {

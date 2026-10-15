@@ -76,7 +76,9 @@ Variables de **Functions**, sin prefijo `VITE_`:
 
 Publicar este proyecto con `netlify.toml`. En Functions verificar que `refresh-rates` figura como **Scheduled**, con frecuencia `*/15 * * * *`. Netlify usa UTC y permite un máximo de 30 segundos por ejecución; las llamadas tienen timeouts de 5 segundos para KV y 10 segundos para fuentes, consultadas en paralelo. No se reintentan automáticamente.
 
-Si el sitio principal tiene reglas antiguas, eliminar el rewrite de `/ibit-to-btc/api/rates` a `/.netlify/functions/rates`. Usar [la plantilla actual](../hosting/netlify-hub.example.toml) solo para páginas. Verificar que `/.netlify/functions/rates` ya no aparece en el despliegue vigente y devuelve `404` en el sitio del conversor. Retirar o proteger deploys antiguos que todavía contengan esa función: una URL de un deploy anterior puede seguir funcionando aunque se haya actualizado producción. Retirar la clave del entorno antiguo o rotarla al completar esa limpieza.
+El dominio y los proxies de páginas pertenecen al proyecto del portfolio `ezevillo` (carpeta local `../ezevillo`); su `netlify.toml` dirige `/ibit-to-btc/*` al origen `https://neon-macaron-a52e5c.netlify.app/ibit-to-btc/:splat`. Mantener la función programada y sus credenciales en el sitio de IBIT. No copiarlas al portfolio. El traslado del dominio se documenta en `docs/netlify-migration.md` del portfolio y debe completarse antes de desplegar la eliminación de las rutas de otros proyectos en IBIT.
+
+Si el sitio principal tiene reglas antiguas, eliminar el rewrite de `/ibit-to-btc/api/rates` a `/.netlify/functions/rates`. El proxy del portfolio sirve las páginas; el navegador consulta directamente el gateway de Cloudflare. Verificar que `/.netlify/functions/rates` ya no aparece en el despliegue vigente y devuelve `404` en el sitio del conversor. Retirar o proteger deploys antiguos que todavía contengan esa función: una URL de un deploy anterior puede seguir funcionando aunque se haya actualizado producción. Retirar la clave del entorno antiguo o rotarla al completar esa limpieza.
 
 ## Caché, concurrencia y fallos
 

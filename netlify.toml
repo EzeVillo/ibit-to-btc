@@ -17,26 +17,7 @@
     X-Frame-Options = "DENY"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-# ezevillo.com also serves project landings through this site's routing.
-# Keep these project prefixes before any future catch-all rule.
-[[redirects]]
-  from = "/git-review-workflow/*"
-  to = "https://ezevillo-git-review-workflow.netlify.app/:splat"
-  status = 200
-  force = true
-
-# Truco keeps its path at the origin; the domain root remains owned by this site.
-[[redirects]]
-  from = "/truco-a-3"
-  to = "https://ezevillo-truco-a-3.netlify.app/truco-a-3/"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/truco-a-3/*"
-  to = "https://ezevillo-truco-a-3.netlify.app/truco-a-3/:splat"
-  status = 200
-  force = true
-
+# This site owns only the converter and its private refresh task.
+# The ezevillo portfolio owns the domain and routing to the other projects.
 # Converter redirects are generated in dist/_redirects; CSP and caching in dist/_headers.
 # Both use APP_BASE_PATH and the public gateway URL during the build.

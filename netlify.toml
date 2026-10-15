@@ -25,5 +25,18 @@
   status = 200
   force = true
 
+# Truco keeps its path at the origin; the domain root remains owned by this site.
+[[redirects]]
+  from = "/truco-a-3"
+  to = "https://ezevillo-truco-a-3.netlify.app/truco-a-3/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/truco-a-3/*"
+  to = "https://ezevillo-truco-a-3.netlify.app/truco-a-3/:splat"
+  status = 200
+  force = true
+
 # Converter redirects are generated in dist/_redirects; CSP and caching in dist/_headers.
 # Both use APP_BASE_PATH and the public gateway URL during the build.
